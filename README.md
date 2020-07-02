@@ -9,6 +9,7 @@
 ### Installation
 
 Chekers requires [Python 3.7] to run.
+### Installing pipenv
 you can install it as follows:
 ```sh
 $ sudo apt install pipenv
