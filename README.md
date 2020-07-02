@@ -1,7 +1,7 @@
 # Checkers
 ### Tech
 
-* [ADjango] - A high-level Python Web framework that encourages rapid development and clean, pragmatic design!
+* [Django] - A high-level Python Web framework that encourages rapid development and clean, pragmatic design!
 * [pipenv] - Python Development Workflow for Humans.
 * [Twitter-Bootstrap] - great UI boilerplate for modern web apps
 
