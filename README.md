@@ -49,4 +49,5 @@ locate manage.py, run the the following, inside the same directory
 ```
 ```sh
  $ python manage.py migrate
+   python manage.py migrate
 ```
