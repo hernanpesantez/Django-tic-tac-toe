@@ -1,7 +1,8 @@
 # Checkers
+This text you see here is *actually* written in Markdown! To get a feel for Markdown's syntax, type some text into the left window and watch the results in the right.
 ### Tech
 
-* [Django] - A high-level Python Web framework that encourages rapid development and clean, pragmatic design!
+* [ADjango] - A high-level Python Web framework that encourages rapid development and clean, pragmatic design!
 * [pipenv] - Python Development Workflow for Humans.
 * [Twitter-Bootstrap] - great UI boilerplate for modern web apps
 
@@ -9,7 +10,6 @@
 ### Installation
 
 Chekers requires [Python 3.7] to run.
-### Installing pipenv
 you can install it as follows:
 ```sh
 $ sudo apt install pipenv

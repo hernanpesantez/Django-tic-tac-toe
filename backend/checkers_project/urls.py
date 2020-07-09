@@ -15,9 +15,10 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from checkers_app.views import home_view
+from checkers_app.views import home_view, about_view
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', home_view, name='home')
+    path('', home_view, name='home'),
+    path('about/', about_view, name='about')
 ]

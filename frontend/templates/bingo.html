@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bingo Board</title>
+  <link rel="stylesheet" href="main.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-teal.css">
+</head>
+<body>
+<section id="navbar">
+<!-- Load an icon library to show a hamburger menu (bars) on small screens -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<div class="topnav" id="myTopnav">
+  <a href="#home" class="active">Home</a>
+  <a onclick="buildBoard()">Play</a>
+  <a href="#contact">Contact</a>
+  <a href="#about">About</a>
+  <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+    <i class="fa fa-bars"></i>
+  </a>
+</div>
+</section class="main-board">
+<section>
+
+<div id="board">
+</div>
+<script>
+function buildBoard() {
+    var size = 8
+    var board = "<table>";
+    var i, j;
+   for (i = 1; i <= size; i++) {
+      board += "<tr>";
+      for (j = 1; j <= size; j++) {
+          classNames = "box ";
+          if ((i + j) % 2 == 0) {
+              classNames += "box-red";
+          } else {
+             classNames += "box-black";
+           }
+           
+          board += "<td class=\"" + classNames + "\" &nbsp;</td>";    
+   }
+      board += "</tr>";
+      
+}
+    board += "</table>";
+   
+      document.getElementById("board").innerHTML = board;
+
+   
+
+}
+</script>
+
+</section>
+
+</body>
+
+</html>
+
+
+              innerCircle ="<div class=" +"innerCircle-red"+"&nbsp;"+ "</div>";   
+            innerCircle ="<div class=" +"innerCircle-black"+"&nbsp;"+ "</div>";   

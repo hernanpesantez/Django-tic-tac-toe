@@ -1,0 +1,11 @@
+/* styling for nav bar */
+
+nav ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: space-between;
+}
+
+/* end styling for nav bar */
