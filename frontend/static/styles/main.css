@@ -9,7 +9,7 @@ header {
 
 body {
     background-color: #1a1a1a;
-    background-image: url("https://images.pexels.com/photos/2129814/pexels-photo-2129814.png?cs=srgb&dl=architecture-bridge-buildings-2129814.jpg&fm=jpg");
+    background-image: url("");
     -moz-background-size: cover;
     -webkit-background-size: cover;
     background-size: cover;
@@ -23,7 +23,7 @@ body {
 }
 
 section.home {
-    /* background-image: url("https://images.pexels.com/photos/764683/pexels-photo-764683.jpeg?cs=srgb&dl=art-beautiful-blur-764683.jpg&fm=jpg"); */
+    background-image: url("https://images.pexels.com/photos/764683/pexels-photo-764683.jpeg?cs=srgb&dl=art-beautiful-blur-764683.jpg&fm=jpg");
     -moz-background-size: cover;
     -webkit-background-size: cover;
     background-size: cover;
@@ -34,6 +34,14 @@ section.home {
     /*opacity: 0.8;*/
     filter: alpha(opacity=50);
     /* For IE8 and earlier */
+}
+
+.searchInput {
+    float: right;
+    display: block;
+    text-align: left;
+    margin: 0;
+    padding: 14px;
 }
 
 .button {
@@ -55,7 +63,7 @@ section.home {
 }
 
 .circle-red64 {
-    background-color: #55da2d;
+    background-color: #da2d52;
     heighT: 100px;
     width: 100px;
     border-radius: 50%;
@@ -153,7 +161,7 @@ section.home {
 /* another side */
 
 .circle-red1 {
-    background-color: #13adc9;
+    background-color: #b7c913;
     height: 100px;
     width: 100px;
     border-radius: 50%;
@@ -174,7 +182,7 @@ section.home {
 }
 
 .circle-red7 {
-    background-color: #057c91;
+    background-color: #b19707;
     height: 100px;
     width: 100px;
     border-radius: 50%;
@@ -234,7 +242,7 @@ section.home {
     left: 40px;
     top: 20px;
     height: 80px;
-    width: 80px;    
+    width: 80px;
     border-radius: 50%;
 }
 

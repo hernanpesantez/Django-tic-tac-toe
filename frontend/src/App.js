@@ -1,8 +1,8 @@
 import React from 'react';
 import {
-    BrowserRouter as Router,
-    Switch,
-    Route,
+  BrowserRouter as Router,
+  Switch,
+  Route,
 } from "react-router-dom";
 
 import './App.css';
@@ -16,46 +16,31 @@ import AboutUS from './components/AboutUs';
 
 
 function App() {
-    return ( <
-        Router >
-        <
-        Nav / >
-        <
-        Switch >
-        <
-        Route path = "/about" >
-        <
-        AboutUS / >
-        <
-        /Route> <
-        Route path = "/external-links" >
-        <
-        ExternalLinks / >
-        <
-        /Route> <
-        Route path = "/contact-us" >
-        <
-        ContactUs / >
-        <
-        /Route> <
-        Route path = "/rules" >
-        <
-        RulesOfBingo / >
-        <
-        /Route> <
-        Route path = "/history" >
-        <
-        History / >
-        <
-        /Route> <
-        Route path = "/" >
-        <
-        Home / >
-        <
-        /Route> < /
-        Switch > <
-        /Router>
-    );
+  return (
+   <Router>
+      <Nav/>
+      <Switch>
+      <Route path="/about">
+          <AboutUS/>
+        </Route>
+        <Route path="/external-links">
+          <ExternalLinks/>
+        </Route>
+        <Route path="/contact-us">
+          <ContactUs/>
+        </Route>
+        <Route path="/rules">
+          <RulesOfBingo />
+        </Route>
+        <Route path="/history">
+          <History/>
+        </Route>
+        <Route path="/">
+          <Home />
+        </Route>
+      </Switch>
+    </Router>
+  );
 }
 
 export default App;
