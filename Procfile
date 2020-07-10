@@ -1,2 +1,3 @@
-web: cd backend
-web: python manage.py runserver
+web: gunicorn checkers_project.wsgi
+
+web: gunicorn checkers_app:app
