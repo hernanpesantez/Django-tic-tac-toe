@@ -119,14 +119,14 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
-STATIC_ROOT = '/statics/'
+# STATIC_ROOT = './frontend/static/'
 
 
-STATIC_URL = '/frontrend/static/'
+STATIC_URL = '/static/'
 # this above address is where to go to, to find static files .
 # you can go to /static/css urls since css files
 STATICFILES_DIRS = (
-    os.path.join(BASE_DIR, './frontend/statics'),
+    os.path.join(BASE_DIR, './frontend/static/'),
     # base_dir finds our base folder so 'mysite'
     # so this is telling our app that our static files will be found in mysite/static
 )
