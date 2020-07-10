@@ -14,7 +14,7 @@ import os
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-FILES_DIR = os.path.abspath(os.path.join(BASE_DIR, '../frontend/templates'))
+FILES_DIR = os.path.abspath(os.path.join(BASE_DIR, './frontend/templates'))
 
 
 
@@ -119,14 +119,14 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
-STATIC_ROOT = '../frontend/static'
+STATIC_ROOT = '/statics/'
 
 
-STATIC_URL = '/static/'
+STATIC_URL = '/frontrend/static/'
 # this above address is where to go to, to find static files .
 # you can go to /static/css urls since css files
 STATICFILES_DIRS = (
-    os.path.join(BASE_DIR, '../frontend/static'),
+    os.path.join(BASE_DIR, './frontend/statics'),
     # base_dir finds our base folder so 'mysite'
     # so this is telling our app that our static files will be found in mysite/static
 )
