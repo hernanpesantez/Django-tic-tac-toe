@@ -4,7 +4,7 @@
 <html lang="en">
 <head>
     <title>My webpage</title>
-   <link rel="icon" href="checkers_favicon.png">
+   <link rel="icon" href="../styles/checkers_favicon.png">
   
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -32,6 +32,7 @@
   <a href={% url 'home' %} class="active">Home</a>
   <a onclick="buildBoard()">Play</a>
   <a href="#contact">Contact</a>
+  <a> {{ user.get_username }}</a>
   <a href="{% url 'about' %}">About</a>
     <input class ="searchInput" type="text" placeholder="Search..">
   <a class="searchInput" href="#search">Search</a>
@@ -76,7 +77,6 @@ function buildBoard() {
             count += 1;
             circle ="<div class=" +"circle-black"+count+"></div>";   
   
-
              classNames += "box-black";
            }
            
@@ -86,7 +86,6 @@ function buildBoard() {
       
 }
     board += "</table>";
-   
       document.getElementById("board").innerHTML = board;
 
 
