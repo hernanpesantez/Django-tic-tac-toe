@@ -37,6 +37,7 @@ section.home {
     /* For IE8 and earlier */
 }
 
+
 .topnav .searchInput {
     float: right;
     display: block;
@@ -115,16 +116,12 @@ section.home {
 
 
 #board {
+
+
     position: relative;
-    background-size: cover;
-    background-position: top center !important;
-    background-repeat: no-repeat !important;
-    background-attachment: fixed;
-    
-    left: 500px;
-    /* background-color: #b99a9a; */
-   
-    /* padding-block-start: 0px; */
+
+    left: 550px;
+
 }
 
 .box {
