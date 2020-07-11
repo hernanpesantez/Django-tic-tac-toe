@@ -70,15 +70,15 @@ section.home {
 
 .innerCircle-red3 {
     position: relative;
-
     /* has to be position relative for left to work, or you could just do margin-left: -50px; too */
-    left: 5px;
+    left: 50px;
     bottom: 0px;
-    background-color: rgba(206, 73, 11, 0.5);
-    heighT: 60px;
-    width: 60px;
+    background-color: rgba(153, 59, 15, 0.5);
+    heighT: 90px;
+    width: 90px;
     border-style: dashed;
     border-radius: 50%;
+}
 }
 
 
@@ -92,19 +92,19 @@ section.home {
 
 
 
-.innerCircle-red62 {
+.innerCircle-red9 {
     position: relative;
     /* has to be position relative for left to work, or you could just do margin-left: -50px; too */
-    left: 5px;
+    left: 50px;
     bottom: 0px;
     background-color: rgba(13, 178, 228, 0.5);
-    heighT: 60px;
-    width: 60px;
+    heighT: 90px;
+    width: 90px;
     border-style: dashed;
     border-radius: 50%;
 }
 
-.innerCircle-red62:hover {
+.innerCircle-red9:hover {
    
     background-color: rgba(240, 234, 231, 0.5);
    
@@ -120,14 +120,14 @@ section.home {
 
     position: relative;
 
-    left: 550px;
+    left: 600px;
 
 }
 
 .box {
     position: relative;
-    width: 80px;
-    height: 80px;
+    width: 200px;
+    height: 200px;
 }
 
 
