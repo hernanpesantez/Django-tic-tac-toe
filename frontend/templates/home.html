@@ -3,8 +3,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>My webpage</title>
-   <link rel="icon" href="../styles/checkers_favicon.png">
+    <title>COVID-X</title>
+   <link rel="icon" href="/styles/checkers_favicon.png">
   
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -47,7 +47,7 @@
 	<section class="home" id="home" name="home" href="#home"> 
     <div id="board">
     </div>
-
+      <tagname style="property:value;">
       <div id="clickable">Here is my clickable div</div>
      
    
@@ -69,9 +69,10 @@ function buildBoard() {
           classNames = "box ";
           if ((i + j) % 2 == 0) {
               count += 1;
-              innerCircle ="<div class="+"innerCircle-red"+"></div>";   
+              innerCircle ="<div class="+"innerCircle-red"+"><h1>"+"."+count+"</h1></div>";
+                 
               circle ="<div class=" +"circle-red"+count+">"+innerCircle+"</div>";
-              console.log(count)   
+                
               classNames += "box-red";
           } else {
             count += 1;
@@ -104,12 +105,6 @@ function myFunction() {
 }
 
 
-document.getElementById('board').addEventListener('click', clickDiv);
-
-function clickDiv() {
-    buildBoard();
-    document.getElementById('board').innerHTML = '<a onclick="buildBoard()">Play</a>'; // Changes text inside div one time only when clicked
-}
 
 
 </script>

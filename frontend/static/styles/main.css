@@ -8,8 +8,8 @@ header {
 }
 
 body {
+    background-image: url("https://images.pexels.com/photos/764683/pexels-photo-764683.jpeg?cs=srgb&dl=art-beautiful-blur-764683.jpg&fm=jpg");
     background-color: #1a1a1a;
-    background-image: url("");
     -moz-background-size: cover;
     -webkit-background-size: cover;
     background-size: cover;
@@ -31,6 +31,7 @@ section.home {
     background-repeat: no-repeat !important;
     background-attachment: fixed;
     width: auto;
+    top: 500px;
     /*opacity: 0.8;*/
     filter: alpha(opacity=50);
     /* For IE8 and earlier */
@@ -55,35 +56,24 @@ section.home {
 
 /* one side */
 
-.innerCircle-red {
-    position: relative;
-    /* has to be position relative for left to work, or you could just do margin-left: -50px; too */
-    left: 20px;
-    top: 20px;
-    background-color: rgb(12, 12, 12);
+.circle-red64 {
+    background-color: #da2d52;
     heighT: 60px;
     width: 60px;
     border-radius: 50%;
 }
 
-.circle-red64 {
-    background-color: #da2d52;
-    heighT: 100px;
-    width: 100px;
-    border-radius: 50%;
-}
-
 .circle-red64:hover {
-    background-color: #da2d61;
-    heighT: 100px;
-    width: 100px;
+    background-color: #2d38da;
+    heighT: 60px;
+    width: 60px;
     border-radius: 50%;
 }
 
 .circle-red62 {
     background-color: #2fac09;
-    heighT: 100px;
-    width: 100px;
+    heighT: 60px;
+    width: 60px;
     border-radius: 50%;
 }
 
@@ -93,71 +83,71 @@ section.home {
 
 .circle-red60 {
     background-color: #55da2d;
-    heighT: 100px;
-    width: 100px;
+    heighT: 60px;
+    width: 60px;
     border-radius: 50%;
 }
 
 .circle-red58 {
     background-color: #55da2d;
-    heighT: 100px;
-    width: 100px;
+    heighT: 60px;
+    width: 60px;
     border-radius: 50%;
 }
 
 .circle-red55 {
     background-color: #55da2d;
-    heighT: 100px;
-    width: 100px;
+    heighT: 60px;
+    width: 60px;
     border-radius: 50%;
 }
 
 .circle-red53 {
     background-color: #55da2d;
-    heighT: 100px;
-    width: 100px;
+    heighT: 60px;
+    width: 60px;
     border-radius: 50%;
 }
 
 .circle-red51 {
     background-color: #55da2d;
-    heighT: 100px;
-    width: 100px;
+    heighT: 60px;
+    width: 60px;
     border-radius: 50%;
 }
 
 .circle-red49 {
     background-color: #55da2d;
-    heighT: 100px;
-    width: 100px;
+    heighT: 60px;
+    width: 60px;
     border-radius: 50%;
 }
 
 .circle-red48 {
     background-color: #55da2d;
-    heighT: 100px;
-    width: 100px;
+    heighT: 60px;
+    width: 60px;
     border-radius: 50%;
 }
 
 .circle-red46 {
     background-color: #55da2d;
-    heighT: 100px;
-    width: 100px;
+    heighT: 60px;
+    width: 60px;
     border-radius: 50%;
 }
 
 .circle-red44 {
     background-color: #55da2d;
-    heighT: 100px;
-    width: 100px;
+    heighT: 60px;
+    width: 60px;
     border-radius: 50%;
 }
 
 .circle-red42 {
     background-color: #55da2d;
-    heighT: 100px;
-    width: 100px;
+    heighT: 60px;
+    width: 60px;
     border-radius: 50%;
 }
 
@@ -166,87 +156,85 @@ section.home {
 
 .circle-red1 {
     background-color: #b7c913;
-    height: 100px;
-    width: 100px;
+    height: 60px;
+    width: 60px;
     border-radius: 50%;
 }
 
 .circle-red3 {
     background-color: #057c91;
-    height: 100px;
-    width: 100px;
+    height: 60px;
+    width: 60px;
     border-radius: 50%;
 }
 
 .circle-red5 {
     background-color: #057c91;
-    height: 100px;
-    width: 100px;
+    height: 60px;
+    width: 60px;
     border-radius: 50%;
 }
 
 .circle-red7 {
     background-color: #b19707;
-    height: 100px;
-    width: 100px;
+    height: 60px;
+    width: 60px;
     border-radius: 50%;
 }
 
 .circle-red10 {
     background-color: #057c91;
-    height: 100px;
-    width: 100px;
+    height: 60px;
+    width: 60px;
     border-radius: 50%;
 }
 
 .circle-red12 {
     background-color: #057c91;
-    height: 100px;
-    width: 100px;
+    height: 60px;
+    width: 60px;
     border-radius: 50%;
 }
 
 .circle-red14 {
     background-color: #057c91;
-    height: 100px;
-    width: 100px;
+    height: 60px;
+    width: 60px;
     border-radius: 50%;
 }
 
 .circle-red16 {
     background-color: #057c91;
-    height: 100px;
-    width: 100px;
+    height: 60px;
+    width: 60px;
     border-radius: 50%;
 }
 
 .circle-red17 {
     background-color: #057c91;
-    height: 100px;
-    width: 100px;
+    height: 60px;
+    width: 60px;
     border-radius: 50%;
 }
 
 .circle-red19 {
     background-color: #057c91;
-    height: 100px;
-    width: 100px;
+    height: 60px;
+    width: 60px;
     border-radius: 50%;
 }
 
 .circle-red21 {
     background-color: #057c91;
-    height: 100px;
-    width: 100px;
+    height: 60px;
+    width: 60px;
     border-radius: 50%;
 }
 
 .circle-red23 {
     background-color: #057c91;
-    left: 40px;
-    top: 20px;
-    height: 80px;
-    width: 80px;
+    height: 60px;
+    width: 60px;
     border-radius: 50%;
 }
 
@@ -276,14 +264,14 @@ section.home {
 
 .box-red {
     background-color: rgb(12, 12, 12);
-    border-style: dotted;
-    border-color: rgb(165, 154, 3);
+    border-style: solid;
+    border-color: rgb(167, 10, 10);
 }
 
 .box-black {
-    background-color: rgb(187, 43, 7);
-    border-style: dotted;
-    border-color: rgb(165, 154, 3);
+    background-color: rgba(8, 60, 75, 0.315);
+    border-style: solid;
+    border-color: rgb(167, 10, 10);
 }
 
 
