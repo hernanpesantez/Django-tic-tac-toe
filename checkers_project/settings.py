@@ -73,7 +73,7 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'checkers_project.wsgi.application'
 
-# STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 # Database
 # https://docs.djangoproject.com/en/3.0/ref/settings/#databases
