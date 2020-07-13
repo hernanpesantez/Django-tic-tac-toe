@@ -31,7 +31,7 @@
 <div class="topnav" id="myTopnav">
   <a href={% url 'home' %}>Home</a>
   <a onclick="buildBoard()">Play</a>
-  <a href="#contact">Contact</a>
+  <a href="{% url 'contact' %}"">Contact</a>
   <a href="{% url 'about' %}">About</a>
   <input class ="searchInput" type="text" placeholder="Search..">
   <a class="searchButton" href="#search">Search</a>
@@ -105,14 +105,7 @@ function myFunction() {
     x.className = "topnav";
   }
 }
-
-
 document.body.style.backgroundImage = "url('https://images.pexels.com/photos/764683/pexels-photo-764683.jpeg?cs=srgb&dl=art-beautiful-blur-764683.jpg&fm=jpg')";
-
-
-
-
-
 
 </script>
 
