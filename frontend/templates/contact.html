@@ -10,7 +10,7 @@
     <link rel="stylesheet" type="text/css" href="{% static '/styles/contact.css' %}?{% now "U" %}">
 
 
-    <link rel="stylesheet" type="text/css" href="{% static '/styles/about.css' %}?{% now "U" %}">
+    <link rel="stylesheet" type="text/css" href="{% static '/styles/main.css' %}?{% now "U" %}">
 
 </head>
 <header>
@@ -20,12 +20,12 @@
 
     <div class="topnav" id="myTopnav">
       <a href={% url 'home' %}>Home</a>
-      <a href="{% url 'contact' %}">Contact</a>
+      {% comment %} <a href="{% url 'contact' %}">Contact</a> {% endcomment %}
       <a href="{% url 'about' %}">About</a>
-      <!-- <input class ="searchInput" type="text" placeholder="Search..">
-      <a class="searchButton" href="#search">Search</a>
-      <a href="javascript:void(0);" class="icon" onclick="myFunction()">
-       -->
+      {% comment %} <input class ="searchInput" type="text" placeholder="Search.."> {% endcomment %}
+      {% comment %} <a class="searchButton" href="#search">Search</a> {% endcomment %}
+      {% comment %} <a href="javascript:void(0);" class="icon" onclick="myFunction()"> {% endcomment %}
+      
         <i class="fa fa-bars"></i>
       </a>
     </div>
@@ -55,7 +55,7 @@
         </select>
         <label for="subject">Subject</label>
         <textarea id="subject" name="subject" placeholder="Write something.." style="height:170px"></textarea>
-        <input type="submit" value="Submit">
+        <input class = "submmit" type="submit" value="Submit">
       </form>
     </div>
   </div>
