@@ -124,6 +124,7 @@ USE_TZ = True
 
 STATIC_ROOT = './frontend/'
 
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
 STATIC_URL = '/static/'
 # this above address is where to go to, to find static files .
