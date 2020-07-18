@@ -34,13 +34,16 @@ ALLOWED_HOSTS = ['*']
 # Application definition
 
 INSTALLED_APPS = [
+    'user.apps.UserConfig',
+    'checkers_app.apps.CheckersAppConfig',
+    'crispy_forms',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'checkers_app'
+    
 ]
 
 MIDDLEWARE = [
@@ -119,6 +122,8 @@ USE_L10N = True
 USE_TZ = True
 
 
+
+
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
@@ -134,3 +139,6 @@ STATICFILES_DIRS = (
     # base_dir finds our base folder so 'mysite'
     # so this is telling our app that our static files will be found in mysite/static
 )
+
+
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
