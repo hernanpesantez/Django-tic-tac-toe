@@ -1,7 +1,3 @@
-body {
-    color: rgb(13, 13, 15);
-}
-
 h1,
 h2 {
     color: rgb(224, 233, 233);
@@ -40,12 +36,6 @@ input[type=submit]:hover {
 
 /* Style the container/contact section */
 
-.container {
-    border-radius: 5px;
-    background-color: #241a305b;
-    padding: px;
-}
-
 
 /* Create two columns that float next to eachother */
 
@@ -54,6 +44,18 @@ input[type=submit]:hover {
     width: 50%;
     margin-top: 6px;
     padding: 20px;
+}
+
+.card-img-top1 {
+    width: 20%;
+    height: 20%;
+    border-radius: 50%;
+}
+
+.card-img-top2 {
+    max-width: 40%;
+    max-height: 20%;
+    border-radius: 50%;
 }
 
 
@@ -65,18 +67,7 @@ input[type=submit]:hover {
     clear: both;
 }
 
-
-/* Responsive layout - when the screen is less than 600px wide, make the two columns stack on top of each other instead of next to each other */
-
-@media screen and (max-width: 600px) {
-    .column,
-    input[type=submit] {
-        width: 67%;
-        margin-top: 0;
-    }
-}
-
-#fname {
-    color: #1e15225b;
-    background-color: rgba(61, 80, 80, 0.479);
+.jumbotron {
+    background-color: #1e15225b;
+    color: #eaf0ea;
 }

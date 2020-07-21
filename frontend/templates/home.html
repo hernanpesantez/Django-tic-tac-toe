@@ -1,51 +1,57 @@
 {% load static %}
 
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>COVID-X</title>
-   <link rel="icon" href="/frontend/static/styles/checkers_favicon.png">
-  
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Bingo Board</title>
+  <title>Covid-X</title>
+  <meta charset="utf-8">
 
-  <link rel="stylesheet" type="text/css" href="{% static '/styles/main.css' %}?{% now "U" %}">
-
-  <link rel="stylesheet" href="./static/styles/main.css">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-  <link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-teal.css">
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+     <link rel="stylesheet" type="text/css" href="{% static '/styles/main.css' %}?{% now "U" %}">
 
 
 </head>
+<body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="60">
 
-<body>
-<header id="header" class="row">
+<header>
+
+<nav class="navbar navbar-default navbar-fixed-top">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+      <a class="navbar-brand" href={% url 'home' %}>COVID-X</a>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav navbar-right">
+        <li><a onclick="buildBoard()">PLAY</a></li>
+        <li><a href={% url 'about' %}>ABOUT</a></li>
+        <li><a href={% url 'contact' %}>CONTACT</a></li>
+        <li><a href="#portfolio">HISTORY</a></li>
+        <li><a href="#pricing">RULES</a></li>
+        <li><a href="#contact">OTHER PLACES TO PLAY</a></li>
+        
+        <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
 
 
-
-<!-- Load an icon library to show a hamburger menu (bars) on small screens -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<link rel="stylesheet" type="text/css" href="{% static '/styles/main.css' %}?{% now "U" %}">
-
-<div class="topnav" id="myTopnav">
-  <a href={% url 'home' %}>Home</a>
-  <a onclick="buildBoard()">Play</a>
-  <a href="{% url 'contact' %}">Contact</a>
-  <a href="{% url 'about' %}">About</a>
-  <input class ="searchInput" type="text" placeholder="Search..">
-  <a class="searchButton" href="#search">Search</a>
-  <a href="javascript:void(0);" class="icon" onclick="myFunction()">
-  
-    <i class="fa fa-bars"></i>
-  </a>
-</div>
+      </ul>
+    </div>
+  </div>
+</nav>
 
 
 </header>
-	<section class="home" id="home" name="home" href="#home"> 
+
     {% if messages %}
       {% for message in messages  %}
       <div class = "alert alert-{{ message.tags }}">
@@ -56,70 +62,12 @@
     <div id="board">
     </div>
 
-	</section>
 
-<script>
+   {% block content %}
+            {% endblock %}
+    {% block puzzle %}
 
-
-
-function buildBoard() {
-
-
-
-    var size = 3;
-    var board = "<table>";
-    var circle; 
-
-    var i, j, count=0;
-   for (i = 1; i <= size; i++) {
-      board += "<tr>";
-      for (j = 1; j <= size; j++) {
-          classNames = "box ";
-          if ((i + j) % 2 == 0) {
-              count += 1;
-              innerCircle ="<div class="+"innerCircle-red"+count+"></div>";
-                 
-              circle ="<div cass=" +"circle-red>"+innerCircle+"</div>";
-                
-              classNames += "box-red";
-          } else {
-            count += 1;
-            circle ="<div class=" +"circle-black"+count+"></div>";   
-  
-             classNames += "box-black";
-           }
-           
-          board += "<td class=\"" + classNames + "\">"+circle+"</td>";    
-   }
-      board += "</tr>";
-      
-}
-    board += "</table>";
-
- 
-
-    document.getElementById("board").innerHTML = board;
-
-
-}
-
-
-
-/* Toggle between adding and removing the "responsive" class to topnav when the user clicks on the icon */
-function myFunction() {
-  var x = document.getElementById("myTopnav");
-  if (x.className === "topnav") {
-    x.className += " responsive";
-  } else {
-    x.className = "topnav";
-  }
-}
-document.body.style.backgroundImage = "url('https://images.pexels.com/photos/764683/pexels-photo-764683.jpeg?cs=srgb&dl=art-beautiful-blur-764683.jpg&fm=jpg')";
-
-</script>
-
-</section>
+    {% endblock puzzle %}
 
 </body>
-
 </html>

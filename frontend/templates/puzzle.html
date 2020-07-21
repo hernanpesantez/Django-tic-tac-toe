@@ -1,0 +1,135 @@
+<!-- Follow these steps to implement the following browser-based puzzle game:
+1. Get a photo of yourself and save it as an image file
+2. Use a image-splitting program such as splitter.imageonline.co to break the image into 9 roughly equal parts (3 x 3). 
+Save those files in a directory
+3. Write Javascript that takes these nine images and randomly rearranges them in a 3 x 3 grid.
+4. Each cell in the grid will also have a checkbox.
+5. At each turn, the user will click two checkboxes, press a Swap button, 
+and the program will swap the two images that were checked.
+6. Play continues until all the sub-images are in their correct positions.
+7. The program will state how many turns (swaps) it took to solve the puzzle.
+8. Use CSS to make your puzzle game aesthetically (stylistically) pleasing
+9. Upload your game (and the photo pieces) to your website.
+10. Provide the URL of your puzzle game where it can be tested. -->
+
+{% extends 'home.html' %}
+
+{% block puzzle %}
+ {% load static %}
+<link rel="stylesheet" type="text/css" href="{% static '/styles/puzzle.css' %}?{% now "U" %}">
+
+
+  
+
+
+
+        <div id="board">
+        
+  
+        </div>
+
+
+ 
+   
+
+    <script>
+
+
+
+    
+    var  img_0 =    "<img src=\"{% static "styles/cropped_0.png" %}\" alt=\"something\">"
+    var  img_1 =    "<img src=\"{% static "styles/cropped_1.png" %}\" alt=\"something\">"
+    var  img_2 =    "<img src=\"{% static "styles/cropped_2.png" %}\" alt=\"something\">"
+    var  img_3 =    "<img src=\"{% static "styles/cropped_3.png" %}\" alt=\"something\">"
+    var  img_4 =    "<img src=\"{% static "styles/cropped_4.png" %}\" alt=\"something\">"
+    var  img_5 =    "<img src=\"{% static "styles/cropped_5.png" %}\" alt=\"something\">"
+    var  img_6 =    "<img src=\"{% static "styles/cropped_6.png" %}\" alt=\"something\">"
+    var  img_7 =    "<img src=\"{% static "styles/cropped_7.png" %}\" alt=\"something\">"
+    var  img_8 =    "<img src=\"{% static "styles/cropped_8.png" %}\" alt=\"something\">"
+
+        console.log(img_0)
+
+        var pics = [img_0, img_1, img_2, img_3, img_4, img_5, img_6, img_7, img_8]
+
+        console.log(pics)
+
+      
+
+        function shuffle() {
+            var currentIndex = pics.length,
+                temporaryValue, randomIndex;
+
+            // While there remain elements to shuffle...
+            while (0 !== currentIndex) {
+
+                // Pick a remaining element...
+                randomIndex = Math.floor(Math.random() * currentIndex);
+                currentIndex -= 1;
+
+                // And swap it with the current element.
+                temporaryValue = pics[currentIndex];
+                pics[currentIndex] = pics[randomIndex];
+                pics[randomIndex] = temporaryValue;
+            }
+
+            buildBoard()
+            return pics;
+        }
+
+        function buildBoard() {
+
+           
+
+            console.log(pics)
+
+
+            var size = 3;
+            var board = "<table>";
+            var circle;
+
+            var i, j, count = 0;
+
+            var imgOder = [];
+            var path;
+
+            for (i = 1; i <= size; i++) {
+                board += "<tr>";
+                for (j = 1; j <= size; j++) {
+                    classNames = "box ";
+                    y = "<div class=";
+                    x = "circle-red>";
+                    z = "<div class=\"checkbox\"><label><input type=\"checkbox\" value=\"\"></label></div>";
+                    circle = y + x+ pics[count];
+
+                    imgOder = [pics[count]]
+                    count++;
+
+
+                    classNames += "box-red";
+
+
+                    board += "<td class=\"" + classNames + "\">" + circle+"</td>";
+                }
+                board += "</tr>";
+
+            }
+
+            board += "</table>";
+
+            document.getElementById("board").innerHTML = board +  "<button onclick=\"shuffle()\">SHUFFLE</button>";
+
+            for (i = 0; i < 8; i++) {
+
+                //   document.getElementById("cropped_" + i + ".png").style.opacity = 0.5;
+
+            }
+
+
+
+        }
+    </script>
+
+
+
+
+{% endblock puzzle %}
