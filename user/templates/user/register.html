@@ -1,0 +1,47 @@
+
+{% extends 'home.html' %}
+
+ {% load crispy_forms_tags %} 
+ {% load static %}
+
+
+{% block content %}
+
+<link rel="stylesheet" type="text/css" href="{% static '/styles/register.css' %}?{% now "U" %}">
+<section class="line">
+<br>
+<br>
+<br>
+<br>
+</section>
+
+
+<section class="container">
+<br>
+
+<div class="jumbotron">
+        <br>
+        <br>
+        <form method = "POST">
+         {% csrf_token %}
+        <fieldset class = "form-group">
+            {{ form|crispy }}
+        </fieldset>
+        <div class ="form-group">
+            <button class="btn btn-outline-info" id="signup" type="submit">Sign Up</button>
+        </div>
+        </form>
+        <div class="broder-top pt-4">
+        <h4 class="text-muted">Already Have An Account <a class = "ml-2" href={% url 'login' %}>Sign In</a>
+        </h4>
+        </div>
+
+
+</div>
+
+</section>
+
+
+      
+    
+{% endblock content %} 

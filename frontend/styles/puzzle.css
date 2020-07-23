@@ -61,6 +61,7 @@ h1 {
 
 #board {
     /* background-color: lightgreen; */
+    margin-top: 50px;
     position: relative;
 }
 
@@ -115,8 +116,4 @@ h1 {
     .logo {
         font-size: 150px;
     }
-}
-
-#winner {
-    padding: 50px;
 }

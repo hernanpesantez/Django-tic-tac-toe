@@ -67,12 +67,7 @@ section.home {
     font-size: medium;
 }
 
-ul {
-    list-style-type: none;
-}
-
 .dropdown-menu {
-    position: absolute;
     background-color: #1a110e;
 }
 
@@ -80,8 +75,6 @@ ul {
 .dropdown-menu {
     border-color: transparent;
     color: #1a1514ea !important;
-    font-size: xx-large;
-    page-break-after: auto;
 }
 
 @-webkit-keyframes slide {
@@ -159,8 +152,8 @@ ul {
 
 .box {
     position: relative;
-    width: 150px;
-    height: 150px;
+    width: 200px;
+    height: 200px;
 }
 
 
@@ -184,4 +177,14 @@ ul {
     background-color: #0c708171;
     border-style: solid;
     border-color: rgb(128, 115, 3);
+}
+
+.jumbotron {
+    padding: 20px;
+    background-color: black;
+    width: auto;
+    position: relative;
+    margin: auto;
+    font-family: Montserrat, sans-serif;
+    font-size: medium;
 }

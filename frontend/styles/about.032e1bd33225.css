@@ -1,3 +1,18 @@
+body {
+    background-image: url("https://images.unsplash.com/photo-1490131784822-b4626a8ec96a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60");
+    background-color: #1a1a1a;
+    -moz-background-size: cover;
+    -webkit-background-size: cover;
+    background-size: cover;
+    background-position: top center !important;
+    background-repeat: no-repeat !important;
+    background-attachment: fixed;
+    margin-top: 0px;
+    margin-left: 0px;
+    margin-right: 0px;
+    margin-bottom: 0px;
+}
+
 p {
     color: cornsilk;
 }
@@ -72,9 +87,4 @@ ul li {
 
 .active {
     background: #ecf0f1;
-}
-
-.jumbotron {
-    background-color: #1e15225b;
-    color: #eaf0ea;
 }

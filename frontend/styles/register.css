@@ -1,0 +1,9 @@
+.jumbotron {
+    background-color: black;
+    max-width: 100px;
+    width: auto;
+    position: relative;
+    margin: auto;
+    font-family: Montserrat, sans-serif;
+    font-size: medium;
+}

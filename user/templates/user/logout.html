@@ -1,0 +1,49 @@
+{% extends 'home.html' %}
+
+ {% load static %}
+
+
+{% block logout %}
+
+
+
+
+
+
+
+<link rel="stylesheet" type="text/css" href="{% static '/styles/logout.css' %}?{% now "U" %}">
+
+<section class="line">
+<br>
+<br>
+<br>
+<br>
+</section>
+
+<section class="container">
+<br>
+
+<div class="jumbotron">
+        <br>
+        <br>
+       <div class="content-section">
+        <h1 id="logout_message">You have been logged out</h1>
+  
+        <div class="broder-top pt-30">
+        <a class = "ml-2" id="logout_txt" href={% url 'login' %}>Log In Again</a>
+        </small>
+        </div>
+    </div>
+
+</div>
+
+</section>
+
+
+
+
+
+
+
+
+{% endblock logout %} 

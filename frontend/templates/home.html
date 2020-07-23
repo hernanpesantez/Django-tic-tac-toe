@@ -32,16 +32,55 @@
       </button>
       <a class="navbar-brand" href={% url 'home' %}>COVID-X</a>
     </div>
+
+    
     <div class="collapse navbar-collapse" id="myNavbar">
-      <ul class="nav navbar-nav navbar-right">
-        <li><a onclick="buildBoard()">PLAY</a></li>
-        <li><a href={% url 'about' %}>ABOUT</a></li>
+
+      <ul class="nav navbar-nav ">
+ 
+        <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          GAMES
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+        <ul>
+        
+        <li>
+      
+          <a class="dropdown-item" href={% url 'puzzle' %}>PROJECT</a></li>
+           <li>
+          <a class="dropdown-item" href={% url 'puzzle' %}>HERNAN</a></li>
+           <li>
+          <a class="dropdown-item" href="#">DORIS</a></li>
+        
+        </div>
+      </li>
+
+        <li><a id="about" href={% url 'about' %}>ABOUT</a></li>
         <li><a href={% url 'contact' %}>CONTACT</a></li>
         <li><a href="#portfolio">HISTORY</a></li>
         <li><a href="#pricing">RULES</a></li>
-        <li><a href="#contact">OTHER PLACES TO PLAY</a></li>
         
-        <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+        {% if user.is_authenticated  %}
+        <li><a>{{user.username|upper}}</a></li>
+
+  
+  
+
+
+
+
+        <li><a href={% url 'logout' %}?{% now "U" %}><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
+
+
+        {% else %}
+        
+        <li><a href={% url 'login' %}?{% now "U" %}><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+        <li><a href={% url 'register' %}?{% now "U" %}><span class="glyphicon glyphicon-plus"></span> register</a></li>
+        
+        {% endif %}      
+  
+
 
 
       </ul>
@@ -52,22 +91,38 @@
 
 </header>
 
+
     {% if messages %}
-      {% for message in messages  %}
+      <section class="line">
+      <br>
+      <br>
+      <br>
+      <br>
+
+            {% for message in messages  %}
       <div class = "alert alert-{{ message.tags }}">
+      {{message.tag}}
       {{message}}
       </div>
       {% endfor %}
     {% endif %}
-    <div id="board">
-    </div>
+      </section>
+ 
+
 
 
    {% block content %}
-            {% endblock %}
+  {% endblock content %}
+
     {% block puzzle %}
 
     {% endblock puzzle %}
+
+
+   {% block logout %}
+  {% endblock logout %}
+
+
 
 </body>
 </html>
