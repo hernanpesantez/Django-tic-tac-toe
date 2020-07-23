@@ -58,9 +58,12 @@
 
         <li><a id="about" href={% url 'about' %}>ABOUT</a></li>
         <li><a href={% url 'contact' %}>CONTACT</a></li>
-        <li><a href="#portfolio">HISTORY</a></li>
-        <li><a href="#pricing">RULES</a></li>
-        
+
+
+
+
+
+
         {% if user.is_authenticated  %}
         <li><a>{{user.username|upper}}</a></li>
 
@@ -77,9 +80,16 @@
         
         <li><a href={% url 'login' %}?{% now "U" %}><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
         <li><a href={% url 'register' %}?{% now "U" %}><span class="glyphicon glyphicon-plus"></span> register</a></li>
-        
+      
         {% endif %}      
-  
+          <li><!-- Search form -->
+
+
+
+<form class="form-inline md-form mr-auto mb-4" action="http://www.google.com/search?q">
+  <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search" value="Search">
+  <button class="btn aqua-gradient btn-rounded btn-sm my-0" type="submit">Search</button>
+</form></li>
 
 
 
@@ -122,7 +132,9 @@
    {% block logout %}
   {% endblock logout %}
 
+<script>
 
+</script>
 
 </body>
 </html>
