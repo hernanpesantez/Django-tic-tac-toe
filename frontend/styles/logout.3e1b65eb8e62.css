@@ -1,0 +1,54 @@
+.jumbotron {
+    position: relative;
+    background-color: #131f25;
+    width: 75%;
+    margin-top: 100px;
+    margin: auto;
+}
+
+.form-group {
+    /* padding-left: 40px;
+    padding-right: 40px; */
+    background-color: #131f25;
+    font-family: Montserrat, sans-serif;
+    display: flex;
+    flex-direction: column;
+}
+
+.broder-top {
+    padding-left: 40px;
+}
+
+label,
+legend {
+    color: #cfe8e9;
+}
+
+input {
+    background-color: #cfe8e9;
+    color: aquamarine;
+}
+
+#id_password {
+    color: rgb(36, 39, 39);
+    background-color: #cfe8e9;
+}
+
+#id_userneme {
+    color: rgb(36, 39, 39);
+    background-color: #cfe8e9;
+}
+
+#login {
+    color: rgb(36, 39, 39);
+    background-color: #cfe8e9;
+}
+
+#logout_message {
+    color: #cfe8e9;
+    font-family: Montserrat, sans-serif;
+}
+
+#logout_txt {
+    font-family: Montserrat, sans-serif;
+}

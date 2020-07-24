@@ -152,16 +152,15 @@ ul {
 }
 
 #board {
-    
     margin-top: auto;
     position: relative;
-    left: 500px;
+    left: 600px;
 }
 
 .box {
     position: relative;
-    width: 100px;
-    height: 100px;
+    width: 150px;
+    height: 150px;
 }
 
 
