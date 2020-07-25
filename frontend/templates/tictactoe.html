@@ -17,12 +17,13 @@
 
 <section class="container">
 <br>
-    
 
 <div id = "header">
 <center><h1 id="result"></h1></center>
 </div>
+<h5>TIC TAC TOE VERSION 1.2 COMING SOON!</h5>
 <div id = "content">
+    
 <table>
 <tr>
 <td><input type = "button" id = "1" onclick = "change(0,0,1)"></input></td>
@@ -52,18 +53,18 @@
 <script>
 
 
-var myEvent = {id: calEvent.id, start: calEvent.start, end: calEvent.end,
-               allDay: calEvent.allDay };
-$.ajax({
-    url: '/handler/',
-    type: 'POST',
-    contentType: 'application/json; charset=utf-8',
-    data: $.toJSON(myEvent),
-    dataType: 'text',
-    success: function(result) {
-        alert(result.Result);
-    }
-});
+// var myEvent = {id: calEvent.id, start: calEvent.start, end: calEvent.end,
+//                allDay: calEvent.allDay };
+// $.ajax({
+//     url: '/handler/',
+//     type: 'POST',
+//     contentType: 'application/json; charset=utf-8',
+//     data: $.toJSON(myEvent),
+//     dataType: 'text',
+//     success: function(result) {
+//         alert(result.Result);
+//     }
+// });
 
 
 

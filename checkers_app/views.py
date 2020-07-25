@@ -155,8 +155,8 @@ def tictactoe_view(request): #displaying the home page
 
 
 
-def save_events_json(request):
-     if request.is_ajax():
-         if request.method == 'POST':
-             print (request.body)   
-     return HttpResponse("OK")
+# def save_events_json(request):
+#      if request.is_ajax():
+#          if request.method == 'POST':
+#              print (request.body)   
+#      return HttpResponse("OK")
