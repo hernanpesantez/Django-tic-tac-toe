@@ -436,13 +436,15 @@ def user_AI_move():
                    break
 
               userMove()
+def play():
 
-while True:
-   try:
-      user_AI_move()
-      break
-   except ValueError:
-      print("Oops! Wrong input. Try again...")
-      print("Board will be reset. Start over..." )
+    while True:
+        try:
+            user_AI_move()
+            break
+        except ValueError:
+            print("Oops! Wrong input. Try again...")
+            print("Board will be reset. Start over..." )
 
 
+play()

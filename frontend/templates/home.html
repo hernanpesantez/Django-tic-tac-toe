@@ -47,7 +47,7 @@
         
         <li>
       
-          <a class="dropdown-item" href={% url 'puzzle' %}>PROJECT</a></li>
+          <a class="dropdown-item" href={% url 'tictactoe' %}>TICTACTOE</a></li>
            <li>
           <a class="dropdown-item" href={% url 'puzzle' %}>HERNAN</a></li>
            <li>
@@ -66,10 +66,6 @@
 
         {% if user.is_authenticated  %}
         <li><a>{{user.username|upper}}</a></li>
-
-  
-  
-
 
 
 
