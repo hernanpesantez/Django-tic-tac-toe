@@ -9,9 +9,7 @@
   </div>
 
 <button onclick="swap(move(self))">Swap</button>
-<p id="insert"></p>
-
-  <h1>"moves" <span id="myText"></span></h1>
+  
 <div id="board">
 </body>
 
@@ -129,10 +127,9 @@ function move(e){
         pics[array[0]]=pics[array[1]];
         pics[array[1]]=temp1;
         moves++;
-       
-        buildBoard();
-        var x = moves;
-document.getElementById("insert").innerHTML = x;
+        document.getElementById("demo").innerHTML = moves;
+      
+
      }
     
 
