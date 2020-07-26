@@ -16,6 +16,7 @@ body {
 }
 
 img {
+    width: 165px;
     opacity: 0.8;
 }
 
@@ -136,17 +137,6 @@ h1 {
     width: 100px;
     height: 100px;
 }
-
-
-/* .box-red:hover {
-    background-color: rgba(211, 240, 241, 0.829);
-    color: aqua;
-} */
-
-
-/* .box-black:hover {
-    background-color: rgba(191, 214, 191, 0.014);
-} */
 
 .box-red {
     background-color: rgba(13, 6, 77, 0.767);
