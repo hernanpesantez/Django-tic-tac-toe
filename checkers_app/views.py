@@ -20,6 +20,9 @@ def contact_view(request, *args,**kwargs):
 def puzzle_view(request, *args,**kwargs):
     return render(request, 'puzzle.html', {})
 
+def puzzledoris_view(request, *args,**kwargs):
+    return render(request, 'puzzleDoris.html', {})
+
 from django.shortcuts import render
 from django.http import HttpResponse
 from django.http import Http404

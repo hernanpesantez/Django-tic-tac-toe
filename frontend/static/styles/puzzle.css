@@ -120,3 +120,36 @@ h1 {
 #winner {
     padding: 50px;
 }
+
+.innerCircle-red9:hover {
+    background-color: rgba(16, 121, 190, 0.5);
+}
+
+#board {
+    margin-top: auto;
+    position: relative;
+    left: 500px;
+}
+
+.box {
+    position: relative;
+    width: 100px;
+    height: 100px;
+}
+
+
+/* .box-red:hover {
+    background-color: rgba(211, 240, 241, 0.829);
+    color: aqua;
+} */
+
+
+/* .box-black:hover {
+    background-color: rgba(191, 214, 191, 0.014);
+} */
+
+.box-red {
+    background-color: rgba(13, 6, 77, 0.767);
+    border-style: solid;
+    border-color: rgb(63, 5, 27);
+}
