@@ -7,9 +7,14 @@
   <div class="jumbotron" id="winner">
 
   </div>
+  <div id="div1">moves</div>
 
 <button onclick="swap(move(self))">Swap</button>
-  
+<!-- <button id ="moves"></button> -->
+<!-- <div id="moves"></div> -->
+<body onload="myFunction()">
+
+  <h1>"moves" <span id="myText"></span></h1>
 <div id="board">
 </body>
 
@@ -26,10 +31,7 @@
    let  img8 ="<img src=\"{% static "styles/8.png" %}\" alt=\"something\">"
   1
 
-  var pics = [img0,img1,img2,img3, img4, img5,img6,img7,img8]
-  .map((x,i)=>[x,i,Math.random()])
-  .sort((a,b)=> a[2]-b[2]);
-
+  var pics = [img1,img2,img5,img7, img0, img6,img8,img3,img4]
             
   var tempArray = [img0,img1,img2,img3, img4, img5,img6,img7,img8];
   let moves=0;
@@ -127,9 +129,9 @@ function move(e){
         pics[array[0]]=pics[array[1]];
         pics[array[1]]=temp1;
         moves++;
-        document.getElementById("demo").innerHTML = moves;
-      
-
+       
+        buildBoard();
+        
      }
     
 
