@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html= lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title> puzzle Game</title>
+ 
+</head>
+<body>
+
+<button onclick="swap(move(self))">Swap</button>
+
+<div id="board">
+
+</div>
+<script>
+  let img0="<img src=\"https://images.pexels.com/photos/1289845/pexels-photo-1289845.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500\" alt=\"pic1\">";
+let img1="<img src=\"https://images.pexels.com/photos/1289845/pexels-photo-1289845.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500\" alt=\"pic2\">";
+let img2="<img src=\"https://images.pexels.com/photos/1289845/pexels-photo-1289845.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500\" alt=\"pic3\">";
+let img3="<img src=\"https://images.pexels.com/photos/1289845/pexels-photo-1289845.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500\" alt=\"pic4\">";
+let img4="<img src=\"https://images.pexels.com/photos/1289845/pexels-photo-1289845.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500\" alt=\"pic5\">";
+let img5="<img src=\"https://images.pexels.com/photos/1289845/pexels-photo-1289845.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500\" alt=\"pic6\">";
+let img6="<img src=\"https://images.pexels.com/photos/1289845/pexels-photo-1289845.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500\" alt=\"pic7\">";
+let img7="<img src=\"https://images.pexels.com/photos/1289845/pexels-photo-1289845.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500\" alt=\"pic8\">";
+let img8="<img src=\"https://images.pexels.com/photos/1289845/pexels-photo-1289845.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500\" alt=\"pic9\">";
+
+
+        function buildBoard() {
+						var size = 3;
+            var board = "<table>";
+            var circle;
+
+            var i, j, count = 0;
+
+            var pics = [img0,img1,img2,img3, img4, img5,img6,img7,img8];
+            
+           	var tempArray = [img0,img1,img2,img3, img4, img5,img6,img7,img8];
+
+
+
+            for (i = 1; i <= size; i++) {
+                board += "<tr>";
+
+
+                for (j = 1; j <= size; j++) {
+                    classNames = "box ";
+                    y = "<div class=";
+                    x = "circle-red>";
+                    z = "<input type=\"checkbox\" class=\"checkbox" +count+"\" name=\"check\" onclick=\"move(this)\" value=\""+count+ "\">";
+                   
+
+                    circle = y + x+z+ pics[count];
+                 
+                    imgOder = [pics[count]]
+                    count++;
+
+
+                    classNames += "box-red";
+
+
+                    board += "<td class=\"" + classNames + "\">" + circle+"</td>";
+                }
+                board += "</tr>";
+
+            }
+
+            board += "</table>";
+
+
+
+            document.getElementById("board").innerHTML = board ;
+}
+    
+     
+function move(e){
+
+   count = 0;
+      
+    var x= document.getElementsByName("check");
+    //console.log(x);
+    
+		var a = [];
+   for (i = 0; i < x.length; i++) {
+        if(x[i].checked && count<2){
+            count++;
+            x[i].checked=true;
+            a[i] = x[i].value;
+            console.log(a[i]);
+           
+            
+           console.log(x[i]);
+         
+       
+        }
+
+        else{
+
+         x[i].checked = false;
+
+         }
+            
+   
+        }
+    
+     
+  var p = a.filter(function (el) {
+  return el != null;
+});
+     
+     console.log(p);
+       return p;
+     }
+    
+     function swap(array){
+				//console.log(array);
+        temp=array[0];
+        array[0]=array[1];
+        array[1]=temp;
+        console.log(array);
+     }
+
+     buildBoard();
+</script>
+  </body>
+
+
+  </html>
