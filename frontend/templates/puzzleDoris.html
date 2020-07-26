@@ -1,42 +1,46 @@
-<!DOCTYPE html>
-<html= lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title> puzzle Game</title>
- 
-</head>
-<body>
+{% extends 'home.html' %}
+
+{% block puzzle %}
+ {% load static %}
+<link rel="stylesheet" type="text/css" href="{% static '/styles/puzzle.css' %}?{% now "U" %}">
+
+  <div class="jumbotron" id="winner">
+
+  </div>
 
 <button onclick="swap(move(self))">Swap</button>
+<p id="insert"></p>
 
+  <h1>"moves" <span id="myText"></span></h1>
 <div id="board">
+</body>
 
 </div>
 <script>
-  let img0="<img src=\"https://images.pexels.com/photos/1289845/pexels-photo-1289845.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500\" alt=\"pic1\">";
-let img1="<img src=\"https://images.pexels.com/photos/1289845/pexels-photo-1289845.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500\" alt=\"pic2\">";
-let img2="<img src=\"https://images.pexels.com/photos/1289845/pexels-photo-1289845.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500\" alt=\"pic3\">";
-let img3="<img src=\"https://images.pexels.com/photos/1289845/pexels-photo-1289845.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500\" alt=\"pic4\">";
-let img4="<img src=\"https://images.pexels.com/photos/1289845/pexels-photo-1289845.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500\" alt=\"pic5\">";
-let img5="<img src=\"https://images.pexels.com/photos/1289845/pexels-photo-1289845.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500\" alt=\"pic6\">";
-let img6="<img src=\"https://images.pexels.com/photos/1289845/pexels-photo-1289845.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500\" alt=\"pic7\">";
-let img7="<img src=\"https://images.pexels.com/photos/1289845/pexels-photo-1289845.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500\" alt=\"pic8\">";
-let img8="<img src=\"https://images.pexels.com/photos/1289845/pexels-photo-1289845.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500\" alt=\"pic9\">";
+   let  img0 ="<img src=\"{% static "styles/0.png" %}\" alt=\"something\">"
+   let  img1 ="<img src=\"{% static "styles/1.png" %}\" alt=\"something\">"
+   let  img2 ="<img src=\"{% static "styles/2.png" %}\" alt=\"something\">"
+   let  img3 ="<img src=\"{% static "styles/3.png" %}\" alt=\"something\">"
+   let  img4 ="<img src=\"{% static "styles/4.png" %}\" alt=\"something\">"
+   let  img5 ="<img src=\"{% static "styles/5.png" %}\" alt=\"something\">"
+   let  img6 ="<img src=\"{% static "styles/6.png" %}\" alt=\"something\">"
+   let  img7 ="<img src=\"{% static "styles/7.png" %}\" alt=\"something\">"
+   let  img8 ="<img src=\"{% static "styles/8.png" %}\" alt=\"something\">"
+  1
 
+  var pics = [img0,img1,img2,img3, img4, img5,img6,img7,img8]
+  .map((x,i)=>[x,i,Math.random()])
+  .sort((a,b)=> a[2]-b[2]);
 
+            
+  var tempArray = [img0,img1,img2,img3, img4, img5,img6,img7,img8];
+  let moves=0;
         function buildBoard() {
 						var size = 3;
             var board = "<table>";
             var circle;
 
             var i, j, count = 0;
-
-            var pics = [img0,img1,img2,img3, img4, img5,img6,img7,img8];
-            
-           	var tempArray = [img0,img1,img2,img3, img4, img5,img6,img7,img8];
-
-
-
             for (i = 1; i <= size; i++) {
                 board += "<tr>";
 
@@ -112,15 +116,27 @@ function move(e){
     
      function swap(array){
 				//console.log(array);
+        
         temp=array[0];
         array[0]=array[1];
         array[1]=temp;
         console.log(array);
+
+        
+
+        let temp1;
+        temp1 =pics[array[0]];
+        pics[array[0]]=pics[array[1]];
+        pics[array[1]]=temp1;
+        moves++;
+       
+        buildBoard();
+        var x = moves;
+document.getElementById("insert").innerHTML = x;
      }
+    
 
      buildBoard();
 </script>
-  </body>
 
-
-  </html>
+  {% endblock puzzle %}
