@@ -8,7 +8,7 @@ urlpatterns = [
     path('about/', about_view, name='about'),
     path('contact/', contact_view, name='contact'),
     path('puzzle/', puzzle_view, name='puzzle'),
-    path('puzzledoriz/', puzzledoris_view, name='puzzledoris'),
+    path('puzzledoris/', puzzledoris_view, name='puzzledoris'),
     path('tictactoe/', tictactoe_view, name='tictactoe'),
     path('handler/',index, name='index')
 

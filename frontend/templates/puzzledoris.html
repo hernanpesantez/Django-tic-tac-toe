@@ -1,0 +1,143 @@
+{% extends 'home.html' %}
+
+{% block puzzle %}
+ {% load static %}
+<link rel="stylesheet" type="text/css" href="{% static '/styles/puzzledoris.css' %}?{% now "U" %}">
+
+  <div class="jumbotron" id="winner">
+
+  </div>
+
+  
+<div id="board">
+</body>
+
+</div>
+<script>
+   let  img0 ="<img src=\"{% static "styles/0.png" %}\" alt=\"something\">"
+   let  img1 ="<img src=\"{% static "styles/1.png" %}\" alt=\"something\">"
+   let  img2 ="<img src=\"{% static "styles/2.png" %}\" alt=\"something\">"
+   let  img3 ="<img src=\"{% static "styles/3.png" %}\" alt=\"something\">"
+   let  img4 ="<img src=\"{% static "styles/4.png" %}\" alt=\"something\">"
+   let  img5 ="<img src=\"{% static "styles/5.png" %}\" alt=\"something\">"
+   let  img6 ="<img src=\"{% static "styles/6.png" %}\" alt=\"something\">"
+   let  img7 ="<img src=\"{% static "styles/7.png" %}\" alt=\"something\">"
+   let  img8 ="<img src=\"{% static "styles/8.png" %}\" alt=\"something\">"
+  1
+
+  var pics = [img4, img5,img1,img2,img8,img0,img3,img6,img7]
+
+
+
+            
+  var tempArray = [img0,img1,img2,img3, img4, img5,img6,img7,img8];
+  let moves=0;
+        function buildBoard() {
+						var size = 3;
+            var board = "<button onclick=\"swap(move(self))\">SWAP</button>"+"<button>MOVES:    " +moves+"</button>"+"<table>";
+            var circle;
+
+            var i, j, count = 0;
+            for (i = 1; i <= size; i++) {
+                board += "<tr>";
+
+
+                for (j = 1; j <= size; j++) {
+                    classNames = "box ";
+                    y = "<div class=";
+                    x = "circle-red>";
+                    z = "<input type=\"checkbox\" class=\"checkbox" +count+"\" name=\"check\" onclick=\"move(this)\" value=\""+count+ "\">";
+                   
+
+                    circle = y + x+z+ pics[count];
+                 
+                    imgOder = [pics[count]]
+                    count++;
+
+
+                    classNames += "box-red";
+
+
+                    board += "<td class=\"" + classNames + "\">" + circle+"</td>";
+                }
+                board += "</tr>";
+
+            }
+
+            board += "</table>";
+
+
+
+            document.getElementById("board").innerHTML = board;
+}
+    
+     
+function move(e){
+
+   count = 0;
+      
+    var x= document.getElementsByName("check");
+    //console.log(x);
+    
+		var a = [];
+   for (i = 0; i < x.length; i++) {
+        if(x[i].checked && count<2){
+            count++;
+            x[i].checked=true;
+            a[i] = x[i].value;
+            console.log(a[i]);
+           
+            
+           console.log(x[i]);
+         
+       
+        }
+
+        else{
+
+         x[i].checked = false;
+
+         }
+            
+   
+        }
+    
+     
+  var p = a.filter(function (el) {
+  return el != null;
+});
+     
+     console.log(p);
+       return p;
+     }
+    
+     function swap(array){
+				//console.log(array);
+        
+        temp=array[0];
+        array[0]=array[1];
+        array[1]=temp;
+        console.log(array);
+
+        
+
+        let temp1;
+        temp1 =pics[array[0]];
+        pics[array[0]]=pics[array[1]];
+        pics[array[1]]=temp1;
+        moves++;
+        buildBoard();
+  
+          var newDiv = document.createElement("div"); 
+  // and give it some content 
+  var newContent = document.createTextNode("Hi there and greetings!"); 
+  // add the text node to the newly created div
+  newDiv.appendChild(newContent);
+
+     }
+    
+
+     buildBoard();
+</script>
+
+  {% endblock puzzle %}

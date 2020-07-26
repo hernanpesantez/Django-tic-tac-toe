@@ -21,7 +21,7 @@ def puzzle_view(request, *args,**kwargs):
     return render(request, 'puzzle.html', {})
 
 def puzzledoris_view(request, *args,**kwargs):
-    return render(request, 'puzzleDoris.html', {})
+    return render(request, 'puzzledoris.html', {})
 
 from django.shortcuts import render
 from django.http import HttpResponse
