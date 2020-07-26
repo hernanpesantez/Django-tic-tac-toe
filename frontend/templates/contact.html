@@ -17,44 +17,30 @@
 <section class="container">
 <br>
 
+<div class="jumbotron"></div>
+<div class="container">
+  <form action="action_page.php">
 
-<div class="jumbotron">
+    <label for="fname">First Name</label>
+    <input type="text" id="fname" name="firstname" placeholder="Your name..">
 
+    <label for="lname">Last Name</label>
+    <input type="text" id="lname" name="lastname" placeholder="Your last name..">
 
+    <label for="country">Country</label>
+    <select id="country" name="country">
+      <option value="australia">Australia</option>
+      <option value="canada">Canada</option>
+      <option value="usa">USA</option>
+    </select>
 
+    <label for="subject">Subject</label>
+    <textarea id="subject" name="subject" placeholder="Write something.." style="height:200px"></textarea>
 
-<div class="row">
-  <div class="col-sm-6">
-    <div class="card">
-      <img class="card-img-top1" src= {% static "styles/cropped_4.png" %} alt="Card image cap">
+    <input type="submit" value="Submit">
 
-      <div class="card-body">
-        <h5 class="card-title">HERNAN PESANTEZ</h5>
-        <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-        <a href="#" class="btn btn-primary">Go somewhere</a>
-      </div>
-    </div>
-  </div>
-  <div class="col-sm-6">
-    <div class="card">
-          <img class="card-img-top2" src= {% static "styles/20200128_075854.dorisPic.jpg" %} alt="Card image cap">
-
-
-      <div class="card-body">
-        <h5 class="card-title">DORIS MORENO</h5>
-        <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-        <a href="#" class="btn btn-primary">Go somewhere</a>
-      </div>
-    </div>
-  </div>
+  </form>
 </div>
-
-
-
-
-    
-</div>
-
 
 
 
