@@ -1,10 +1,8 @@
 {% extends 'home.html' %} 
-
-
 {% block content %}
   {% load static %}
 
-    <link rel="stylesheet" type="text/css" href="{% static '/styles/about.css' %}?{% now "U" %}">
+    <link rel="stylesheet" type="text/css" href="{% static '/styles/index.css' %}?{% now "U" %}">
 
 
 <section class="line">
@@ -18,47 +16,50 @@
 <div class="jumbotron">
     
 <div class="jumbotron text-center">
-    <h1>Welcome</h1>
-    <p>THIS AMAZING WEDSITE WAS DEVELOPED BY HERNAN AND DORIS</p> 
-    <h3><a href={% url 'tictactoe' %}?{% now "U" %} >PLAY TIC-TAC-TOE</a></h3>
-
-  </div>
-    
-  <div class="container">
-    <div class="row">
-      <div class="col-sm-4">
-        <h5><a href="https://www.google.com/search?q=tictactoe&oq=tictactoe&aqs=chrome.0.69i59l2j0l6.3121j1j8&client=ubuntu&sourceid=chrome&ie=UTF-8" >PLAY AT GOOGLE</a></h5>
-
-      </div>
-      <div class="col-sm-4">
-        <h5><a href="https://playtictactoe.org/">PLAY AT NEAVE</a></h5>
-
-    
-      </div>
-      <div class="col-sm-4">
-        <h5><a href="https://gametable.org/games/tic-tac-toe/">PLAY AT GAMEABLE</a></h5>
-      </div>
-    </div>
-  </div>
-  
-</div>
+    <h1 style="color:darkkhaki">TIC-TAC-TOE</h1>
+</br>
+    <!-- <p>THIS AMAZING WEDSITE WAS DEVELOPED BY HERNAN AND DORIS</p>  -->
+    <form>
+      <button type="submit" formaction={% url 'tictactoe' %}?{% now "U" %} class="play">PLAY</button>
+   </form>
+     <!-- <p><a href={% url 'tictactoe' %}?{% now "U" %} class="play">PLAY</a></p>  -->
+  </br>
 <div class="jumbotron">
-      <h1>HISTORY</h1><br>
+      <h1 style="color:cornflowerblue">HISTORY</h1><br>
      
-     <h3>Games played on three-in-a-row boards can be traced back to ancient Egypt,[5] where such game boards have been found on</br>
-         roofing tiles dating from around 1300 BCE. An early variation of tic-tac-toe was played in the Roman Empire, around the first</br>
-        century BC. It was called terni lapilli (three pebbles at a time) and instead of having any number of pieces, each player only </br>
-        had three, thus they had to move them around to empty spaces to keep playing.[7] The game's grid markings have been found chalked</br>
-        all over Rome. Another closely related ancient game is three men's morris which is also played on a simple grid and requires three </br>
+     <h3 class="double">Games played on three-in-a-row boards can be traced back to ancient Egypt,[5] where such game boards have been found on
+         roofing tiles dating from around 1300 BCE. An early variation of tic-tac-toe was played in the Roman Empire, around the first
+        century BC. It was called terni lapilli (three pebbles at a time) and instead of having any number of pieces, each player only 
+        had three, thus they had to move them around to empty spaces to keep playing.[7] The game's grid markings have been found chalked
+        all over Rome. Another closely related ancient game is three men's morris which is also played on a simple grid and requires three 
         pieces in a row to finish,[8] and Picaria, a game of the Puebloans.</h3>
     </div>
-
     <div class="jumbotron">
-      <h1>RULES</h1><br>
-     <h3> The object of Tic Tac Toe is to get three in a row. You play on a three by three game board. The first player is known as X 
+      <h1 style="color:cornflowerblue">RULES</h1><br>
+     <h3 class="double">The object of Tic Tac Toe is to get three in a row. You play on a three by three game board. The first player is known as X 
      and the second is O. Players alternate placing Xs and Os on the game board until either oppent has three in a row or all nine squares 
      are filled. X always goes first, and in the event that no one has three in a row, the stalemate is called a cat game.</h3>
     
+</div> 
+</div>
+    
+<div class="container">
+  <div class="row">
+    <div class="col-sm-4">
+      <h5><a href="https://www.google.com/search?q=tictactoe&oq=tictactoe&aqs=chrome.0.69i59l2j0l6.3121j1j8&client=ubuntu&sourceid=chrome&ie=UTF-8" >PLAY AT GOOGLE</a></h5>
+
+    </div>
+    <div class="col-sm-4">
+      <h5><a href="https://playtictactoe.org/">PLAY AT NEAVE</a></h5>
+
+  
+    </div>
+    <div class="col-sm-4">
+      <h5><a href="https://gametable.org/games/tic-tac-toe/">PLAY AT GAMEABLE</a></h5>
+    </div>
+  </div>
+</div>
+
 </div>
 
 </section>
