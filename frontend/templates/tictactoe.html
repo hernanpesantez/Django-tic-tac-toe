@@ -4,8 +4,8 @@
 {% block content %}
   {% load static %}
 
-<link rel="stylesheet" type="text/css" href="{% static '/styles/tictactoe.css' %}?{% now "U" %}">
 <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+<link rel="stylesheet" type="text/css" href="{% static '/styles/tictactoe.css' %}?{% now "U" %}">
 
 
 <section class="line">
@@ -21,24 +21,23 @@
 <div id = "header">
 <center><h1 id="result"></h1></center>
 </div>
-<h5>TIC TAC TOE VERSION 1.2 COMING SOON!</h5>
 <div id = "content">
     
 <table>
 <tr>
-<td><input type = "button" id = "1" onclick = "change(0,0,1)"></input></td>
-<td><input type = "button" id = "2" onclick = "change(0,1,2)"></input></td>
-<td><input type = "button" id = "3" onclick = "change(0,2,3)"></input></td>
+<td><input class = "d_1" type = "button" id = "1" onclick = "change(0,0,1)"></input></td>
+<td><input class = "d_2" type = "button" id = "2" onclick = "change(0,1,2)"></input></td>
+<td><input class = "d_3" type = "button" id = "3" onclick = "change(0,2,3)"></input></td>
 </tr>
 <tr>
-<td><input type = "button" id = "4" onclick = "change(1,0,4)"></input></td>
-<td><input type = "button" id = "5" onclick = "change(1,1,5)"></input></td>
-<td><input type = "button" id = "6" onclick = "change(1,2,6)"></input></td>
+<td><input class = "d_4" type = "button" id = "4" onclick = "change(1,0,4)"></input></td>
+<td><input class = "d_5" type = "button" id = "5" onclick = "change(1,1,5)"></input></td>
+<td><input class = "d_6" type = "button" id = "6" onclick = "change(1,2,6)"></input></td>
 </tr>
 <tr>
-<td><input type = "button" id = "7" onclick = "change(2,0,7)"></input></td>
-<td><input type = "button" id = "8" onclick = "change(2,1,8)"></input></td>
-<td><input type = "button" id = "9" onclick = "change(2,2,9)"></input></td>
+<td><input class = "d_7" type = "button" id = "7" onclick = "change(2,0,7)"></input></td>
+<td><input class = "d_8" type = "button" id = "8" onclick = "change(2,1,8)"></input></td>
+<td><input class = "d_9" type = "button" id = "9" onclick = "change(2,2,9)"></input></td>
 </tr>
 </table>
 </div>
@@ -46,7 +45,7 @@
 <table>
 <tr>
 <td><input type = "button" id = "10" value = "I START" onclick = "chance(10)"></input></td>
-<td><input type = "button" id = "11" value = "GPT-3 STARTS" onclick = "chance(11)"></input></td>
+<td><input type = "button" id = "11" value = "GPT-3 STARTS " onclick = "chance(11)"></input></td>
 </tr>
 </table>
 </div>
@@ -80,6 +79,10 @@
 var c = 0;
 var board = [0,0,0,0,0,0,0,0,0];
 var flag = -1;
+
+var first_move = 0
+var go = ""
+
 function chance(id) //passing the first player information to view
 {	
 	if(id == 10) {
@@ -99,7 +102,9 @@ function chance(id) //passing the first player information to view
         board[i] = 0;
     }
     if(c == 1) {
+		go = "computer"
         var x = Math.floor(Math.random() * 8);
+		first_move = x; 
         board[x] = 1;
         document.getElementById(x+1).value = 'X';
     }
@@ -128,9 +133,10 @@ function change(xpos,ypos,id) //passing the user choice or move to view and upda
         $.ajax({
             url:"/handler/",
             type:"POST",
-            data:{"board[]":board},
+            data:{"board[]":board, "first_move":first_move,"go_first":go},
             cache:false,
             success:function(json) {
+				
             	if(c == 1) {
             		if(json['res'] == 1) {
             			if(json['winner'] == 'comp') {

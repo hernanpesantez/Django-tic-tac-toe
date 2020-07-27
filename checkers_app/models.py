@@ -9,3 +9,8 @@ class User(models.Model):
     summary     = models.TextField(default='add something!')
     featured    = models.BooleanField()
 
+
+class UserMoves(models.Model):
+    name = models.CharField(max_length=120)
+    moves = models.CharField(max_length=120)
+    

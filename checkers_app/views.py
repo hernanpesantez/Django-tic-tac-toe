@@ -1,6 +1,8 @@
 from django.shortcuts import render
 from django.http import HttpResponse
+import json
 
+from .models import UserMoves
 
 # Create your views here.
 def home_view(request, *args, **kwargs):
@@ -36,6 +38,9 @@ from django.views.decorators.csrf import csrf_exempt
 
 xpos = -1
 ypos = -1
+
+saved_moves = {}
+
 def score(b,comp,p,turn): #checks if a player has won or not
 	flag = 0
 	for i in range(3):
@@ -114,40 +119,147 @@ def tictac(b,comp,p,turn,g): #min-max algorithm for tic-tac toe
 							xpos = i
 							ypos = j
 					b[i][j] = 0
+		
 		return mn
 @csrf_exempt
 def index(request): #when the user submits his choice
-    print(request.method)
-    if request.method == 'POST':
-        print(request.body)
-        board = request.POST.getlist('board[]')
-        print('hello')
-        a = [[0 for x in range(3)] for x in range(3)]
-        print(a)
-        for i in range(3):
-            for j in range(3):
-                a[i][j] = int(board[3*i+j])
-        s = score(a,1,2,2)
-        if(s == -10):
-            print(request.body)
 
-            print(JsonResponse({'val':0,'res':1,'winner':'player'}))
-            return JsonResponse({'val':0,'res':1,'winner':'player'})
+	
 
-        elif(checkdraw(a) == 1):
-            return JsonResponse({'val':0,'res':1,'winner':'draw'})
-        tictac(a,1,2,1,0)
-        a[xpos][ypos] = 1
-        s = score(a,1,2,1)
-        if(s == 10):
-            print(JsonResponse({'val':xpos*3+ypos,'res':1,'winner':'comp'}))
-            return JsonResponse({'val':xpos*3+ypos,'res':1,'winner':'comp'})
+	
+	
 
-        elif(checkdraw(a) == 1):
-            return JsonResponse({'val':xpos*3+ypos,'res':1,'winner':'draw'})
-        return JsonResponse({'val':xpos*3+ypos,'res':0,'winner':'none'})
-    else:
-        return JsonResponse({'val':"error"})
+	if request.method == 'POST':
+		
+		board = request.POST.getlist('board[]')
+
+		x = request.POST.get('first_move')
+		go_first=request.POST.get('go_first')
+	
+		print(go_first)
+
+		print(board)
+
+		print(x)
+		x = int(x)
+		# if(go_first!=""):
+    	# 		board[x]=1
+		
+		a = [[0 for x in range(3)] for x in range(3)]
+	
+		for i in range(3):
+			for j in range(3):
+				a[i][j] = int(board[3*i+j])
+		print(a)
+
+		
+
+
+		s = score(a,1,2,2)
+		x = request.get_host()
+		
+
+		moves = {x:str(a)}
+
+
+
+		with open('test.json') as json_file: 
+			data = json.load(json_file) 
+
+			temp = data['moves'] 
+
+			# python object to be appended 
+
+
+
+			# appending data to emp_details  
+			temp.append(moves) 
+      
+		write_json(data)  
+
+
+		if(s == -10):
+			# print(request.body)
+			with open('test.json') as json_file: 
+				data = json.load(json_file) 
+
+				temp = data['moves'] 
+
+				# python object to be appended 
+
+
+
+				# appending data to emp_details  
+				temp.append({'val':0,'res':1,'winner':'player'}) 
+      
+			write_json(data)  
+
+
+
+			return JsonResponse({'val':0,'res':1,'winner':'player'})
+		elif(checkdraw(a) == 1):
+
+						# print(request.body)
+			with open('test.json') as json_file: 
+				data = json.load(json_file) 
+
+				temp = data['moves'] 
+
+				# python object to be appended 
+
+				x = {request.get_host():str([{'val':0,'res':1,'winner':'draw'}])}
+
+				# appending data to emp_details  
+				temp.append(x) 
+      
+			write_json(data)  	    			
+
+			return JsonResponse({'val':0,'res':1,'winner':'draw'})
+
+		tictac(a,1,2,1,0)
+		a[xpos][ypos] = 1
+		s = score(a,1,2,1)
+		if(s == 10):
+						# print(request.body)
+			with open('test.json') as json_file: 
+				data = json.load(json_file) 
+
+				temp = data['moves'] 
+
+				# python object to be appended 
+
+				x = {request.get_host():str([{'val':xpos*3+ypos,'res':1,'winner':'comp'}])}
+
+				# appending data to emp_details  
+				temp.append(x) 
+      
+			write_json(data)  			
+		
+		
+			return JsonResponse({'val':xpos*3+ypos,'res':1,'winner':'comp'})
+			
+		elif(checkdraw(a) == 1):
+						# print(request.body)
+			with open('test.json') as json_file: 
+				data = json.load(json_file) 
+
+				temp = data['moves'] 
+
+				# python object to be appended 
+
+				x = {request.get_host():str([{'val':xpos*3+ypos,'res':1,'winner':'draw'}])}
+
+				# appending data to emp_details  
+				temp.append(x) 
+      
+			write_json(data)  
+		
+			return JsonResponse({'val':xpos*3+ypos,'res':1,'winner':'draw'})
+
+
+		return JsonResponse({'val':xpos*3+ypos,'res':0,'winner':'none'})
+	else:
+		return JsonResponse({'val':"error"})
 
 @csrf_exempt
 
@@ -157,9 +269,27 @@ def tictactoe_view(request): #displaying the home page
 
 
 
+		
 
-# def save_events_json(request):
-#      if request.is_ajax():
-#          if request.method == 'POST':
-#              print (request.body)   
-#      return HttpResponse("OK")
+# function to add to JSON 
+def write_json(data, filename='test.json'): 
+    with open(filename,'w') as f: 
+        json.dump(data, f, indent=4) 
+      
+      
+# with open('test.json') as json_file: 
+#     data = json.load(json_file) 
+      
+#     temp = data['moves'] 
+  
+#     # python object to be appended 
+#     y = {"emp_name":'Nikhil', 
+#          "email": "nikhil@geeksforgeeks.org", 
+#          "job_profile": "Full Time"
+#         } 
+  
+  
+#     # appending data to emp_details  
+#     temp.append(y) 
+      
+# write_json(data)  
