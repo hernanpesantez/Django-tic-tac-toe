@@ -1,4 +1,115 @@
+body {
+    background-image: linear-gradient( rgba(24, 22, 22, 0.794), rgba(14, 13, 13, 0.801)), url("https://images.pexels.com/photos/1363876/pexels-photo-1363876.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260");
+    background-color: #1a1a1a;
+    -moz-background-size: cover;
+    -webkit-background-size: cover;
+    background-size: cover;
+    background-position: top center !important;
+    background-repeat: no-repeat !important;
+    background-attachment: fixed;
+    /* margin-top: 0px;
+  margin-left: 0px;
+  margin-right: 0px;
+  margin-bottom: 0px; */
+    /* filter: blur(8px); */
+    filter: alpha(opacity=20);
+}
+
 img {
-    height: 10%;
-    width: 10%;
+    width: 170px;
+    height: 170px;
+}
+
+button {
+    padding: 20px 40px;
+    font-size: 20px;
+    border-radius: 10px;
+    font-family: Montserrat, sans-serif;
+}
+
+#board {
+    /* background-color: lightgreen; */
+    position: relative;
+    height: 30px;
+    width: 40px;
+}
+
+.box {
+    margin-left: auto;
+    position: relative;
+    width: 30%;
+    height: 30px;
+    /* border-style: solid; */
+}
+
+.checkbox0,
+.checkbox1,
+.checkbox2,
+.checkbox3,
+.checkbox4,
+.checkbox5,
+.checkbox6,
+.checkbox7,
+.checkbox7,
+.checkbox8 {
+    zoom: 2.6;
+    z-index: 10;
+    position: absolute;
+}
+
+.jumbotron {
+    background-color: #1e15225b;
+}
+
+@-webkit-keyframes slide {
+    0% {
+        opacity: 0;
+        -webkit-transform: translateY(70%);
+    }
+    100% {
+        opacity: 1;
+        -webkit-transform: translateY(0%);
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .col-sm-4 {
+        text-align: center;
+        margin: 25px 0;
+    }
+    .btn-lg {
+        width: 100%;
+        margin-bottom: 35px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .logo {
+        font-size: 150px;
+    }
+}
+
+#winner {
+    padding: 50px;
+}
+
+.innerCircle-red9:hover {
+    background-color: rgba(16, 121, 190, 0.5);
+}
+
+#board {
+    margin-top: auto;
+    position: relative;
+    left: 500px;
+}
+
+.box {
+    position: relative;
+    margin-left: 30px;
+}
+
+.box-red {
+    background-color: rgb(7, 7, 7);
+    border-style: solid;
+    border-color: rgb(0, 0, 0);
 }

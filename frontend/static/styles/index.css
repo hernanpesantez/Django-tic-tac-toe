@@ -1,7 +1,27 @@
 p {
-    color: cornsilk;
+    color: rgb(35, 141, 212);
 }
-
+h3{
+  color: #cfe8e9;
+  text-align: justify;
+  font-size: large;
+  
+}
+.double{
+  line-height: 2 ;
+}
+.play{
+  background-color: #afad4c;
+  border: none;
+  color: black;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: navy;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
 .wrapper {
     position: relative;
     transform: translateY(-50%);
@@ -79,45 +99,13 @@ ul li {
     color: #eaf0ea;
 }
 .card-img-top1 {
-    width: 45%;
-    height: 45%;
+    width: 20%;
+    height: 20%;
     border-radius: 50%;
-    position: relative;
-    
 }
 
 .card-img-top2 {
-    height: 220px;
-    width: 220px;
-    border-radius: 70%;
-    margin-left: 190px;
-  
-}
-.card-titleHernan{
-    margin-left: 35px;
-}
-.card-textHernan{
-    text-align: justify;
-    line-height: 2 ;
-
-}
-.card-titleDoris{
-    margin-left: 230px;
-}
-.card-textDoris{
-    text-align: justify;
-    line-height: 2 ;
-    margin-left: 190px;
-
-}
-
-.btn-primaryDoris{
-    margin-left: 250px;
-    text-size-adjust: large;
-  
-}
-.btn-primaryHernan{
-    margin-left: 100px;
-
-  
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
 }
