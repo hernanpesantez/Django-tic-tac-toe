@@ -124,35 +124,53 @@ def tictac(b,comp,p,turn,g): #min-max algorithm for tic-tac toe
 @csrf_exempt
 def index(request): #when the user submits his choice
 
-	
+	data = {}
 
-	
-	
+	with open('test.json') as f:
+		data = json.load(f)
+
+		
+
+		# Output: {'name': 'Bob', 'languages': ['English', 'Fench']}
+		# print(data)
+
+	size = len(data.get('moves'))
+	print(size)
+
+	# x  = data.get('moves')[size]
+	# print(x)
 
 	if request.method == 'POST':
+			
+
+
+
 		
+
 		board = request.POST.getlist('board[]')
 
-		x = request.POST.get('first_move')
-		go_first=request.POST.get('go_first')
-	
-		print(go_first)
+		
 
-		print(board)
-
-		print(x)
-		x = int(x)
-		# if(go_first!=""):
-    	# 		board[x]=1
 		
 		a = [[0 for x in range(3)] for x in range(3)]
 	
 		for i in range(3):
 			for j in range(3):
 				a[i][j] = int(board[3*i+j])
-		print(a)
+		# print(a)
 
+		print(data.get('moves')[size-1])
+		# if(data.get('moves')[size-1]['127.0.0.1:8000'][1]=='{'):
+			
+		# 	print('hello')
+		# else:
+		# 	print('hhhhh')
+		# 	print(data.get('moves')[size-1]['127.0.0.1:8000'])
+		# 	print(type(a))
+		# 	print(type(x))
+			
 		
+			
 
 
 		s = score(a,1,2,2)
@@ -190,7 +208,7 @@ def index(request): #when the user submits his choice
 
 
 				# appending data to emp_details  
-				temp.append({'val':0,'res':1,'winner':'player'}) 
+				# temp.append({'val':0,'res':1,'winner':'player'}) 
       
 			write_json(data)  
 
@@ -207,12 +225,12 @@ def index(request): #when the user submits his choice
 
 				# python object to be appended 
 
-				x = {request.get_host():str([{'val':0,'res':1,'winner':'draw'}])}
+				# x = {request.get_host():str([{'val':0,'res':1,'winner':'draw'}])}
 
 				# appending data to emp_details  
-				temp.append(x) 
+				# temp.append(x) 
       
-			write_json(data)  	    			
+			# write_json(data)  	    			
 
 			return JsonResponse({'val':0,'res':1,'winner':'draw'})
 
@@ -228,12 +246,12 @@ def index(request): #when the user submits his choice
 
 				# python object to be appended 
 
-				x = {request.get_host():str([{'val':xpos*3+ypos,'res':1,'winner':'comp'}])}
+				# x = {request.get_host():str([{'val':xpos*3+ypos,'res':1,'winner':'comp'}])}
 
 				# appending data to emp_details  
-				temp.append(x) 
+				# temp.append(x) 
       
-			write_json(data)  			
+			# write_json(data)  			
 		
 		
 			return JsonResponse({'val':xpos*3+ypos,'res':1,'winner':'comp'})
@@ -250,9 +268,9 @@ def index(request): #when the user submits his choice
 				x = {request.get_host():str([{'val':xpos*3+ypos,'res':1,'winner':'draw'}])}
 
 				# appending data to emp_details  
-				temp.append(x) 
+				# temp.append(x) 
       
-			write_json(data)  
+			# write_json(data)  
 		
 			return JsonResponse({'val':xpos*3+ypos,'res':1,'winner':'draw'})
 
@@ -262,7 +280,6 @@ def index(request): #when the user submits his choice
 		return JsonResponse({'val':"error"})
 
 @csrf_exempt
-
 def tictactoe_view(request): #displaying the home page
 	context = {}
 	return render(request,"tictactoe.html",context)
@@ -276,20 +293,64 @@ def write_json(data, filename='test.json'):
     with open(filename,'w') as f: 
         json.dump(data, f, indent=4) 
       
-      
-# with open('test.json') as json_file: 
-#     data = json.load(json_file) 
-      
-#     temp = data['moves'] 
-  
-#     # python object to be appended 
-#     y = {"emp_name":'Nikhil', 
-#          "email": "nikhil@geeksforgeeks.org", 
-#          "job_profile": "Full Time"
-#         } 
-  
-  
-#     # appending data to emp_details  
-#     temp.append(y) 
-      
-# write_json(data)  
+@csrf_exempt     
+def store_game(request):
+    	
+	x = request.POST.get('last_move')
+	y = request.POST.get('go')
+	# print(x)
+	# print(y)	
+
+	# print(request.POST.getlist('board[]'))
+    	
+	if request.user.is_authenticated:
+    		
+		board = request.POST.getlist('board[]')
+
+		user =  str(request.user.id)
+
+		
+		# print(request.user.is_authenticated)
+		
+
+		data = {1:board}
+		
+
+		data = json.dumps(data)
+
+
+		m = UserMoves(moves=data,last_move=x,user=request.user)
+		m.save()
+
+		return JsonResponse({'status':'200'})
+	return JsonResponse({'status':'403'})
+
+@csrf_exempt     
+
+def load_game(request):
+    
+	if request.user.is_authenticated:
+    		
+		data = dict()
+		print('hello00000000')
+
+		
+		y = UserMoves.objects.filter(user=request.user)
+		z = y.last()
+	
+		data = z.moves
+		last_move = z.last_move
+
+		# print(last_move)
+
+
+    
+		data = res = json.loads(data) 
+
+		
+
+		# print(data)
+
+
+
+	return JsonResponse(data)

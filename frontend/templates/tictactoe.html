@@ -15,41 +15,79 @@
 <br>
 </section>
 
+
+
 <section class="container">
+<div id = "header">
+<h1 id="result"></h1>
+</div>
 <br>
 
-<div id = "header">
-<center><h1 id="result"></h1></center>
+<div class="jumbotron" >
+
+
+<div id="load">
+	
 </div>
+
+
 <div id = "content">
+
     
 <table>
 <tr>
-<td><input class = "d_1" type = "button" id = "1" onclick = "change(0,0,1)"></input></td>
-<td><input class = "d_2" type = "button" id = "2" onclick = "change(0,1,2)"></input></td>
-<td><input class = "d_3" type = "button" id = "3" onclick = "change(0,2,3)"></input></td>
+<td><input class= "d_1" type = "button" id = "1" onclick = "change(0,0,1)" ></input></td>
+<td><input class= "d_2" type = "button" id = "2" onclick = "change(0,1,2)" ></input></td>
+<td><input class= "d_3" type = "button" id = "3" onclick = "change(0,2,3)" ></input></td>
 </tr>
 <tr>
-<td><input class = "d_4" type = "button" id = "4" onclick = "change(1,0,4)"></input></td>
-<td><input class = "d_5" type = "button" id = "5" onclick = "change(1,1,5)"></input></td>
-<td><input class = "d_6" type = "button" id = "6" onclick = "change(1,2,6)"></input></td>
+<td><input class= "d_4" type = "button" id = "4" onclick = "change(1,0,4)" ></input></td>
+<td><input class= "d_5" type = "button" id = "5" onclick = "change(1,1,5)" ></input></td>
+<td><input class= "d_6" type = "button" id = "6" onclick = "change(1,2,6)" ></input></td>
 </tr>
 <tr>
-<td><input class = "d_7" type = "button" id = "7" onclick = "change(2,0,7)"></input></td>
-<td><input class = "d_8" type = "button" id = "8" onclick = "change(2,1,8)"></input></td>
-<td><input class = "d_9" type = "button" id = "9" onclick = "change(2,2,9)"></input></td>
+<td><input class= "d_7"  type = "button" id = "7" onclick = "change(2,0,7)" ></input></td>
+<td><input class= "d_8" type = "button" id = "8" onclick = "change(2,1,8)" ></input></td>
+<td><input class= "d_9" type = "button" id = "9" onclick = "change(2,2,9)" ></input></td>
 </tr>
 </table>
 </div>
+
 <div id = "footer">
-<table>
-<tr>
-<td><input type = "button" id = "10" value = "I START" onclick = "chance(10)"></input></td>
-<td><input type = "button" id = "11" value = "GPT-3 STARTS " onclick = "chance(11)"></input></td>
-</tr>
-</table>
+<input type = "button" id = "d_10" value = "X" onclick = "chance(10)" ></input>
+<input type = "button" id = "d_11" value = "O" onclick = "chance(11)" ></input>
+<input type = "button" id = "d_14" value = "EXIT" onclick = "home()"  ></input>
+
+
+
+</div>
+
+</br>
+  {% if user.is_authenticated  %}
+<input type = "button" id = "d_12" value = "SAVE GAME" onclick = "storeGame()" ></input>
+<input type = "button" id = "d_13" value = "LOAD GAME " onclick = "loadGame()" ></input>
+
+<input type = "button" id = "d_15" value = "DELETE DB" onclick =  ></input>
+
+
+
+
+        {% else %}
+
+
+        <h4 class="text-muted"><a class = "ml-2" href={% url 'login' %}>Log In </a> to Save Your Game</h4>
+        <h4 class="text-muted">Need An Account <a class = "ml-2" href={% url 'register' %}>Sign In</a>
+
+      
+        {% endif %}  
+
+
+
 </div>
 <script>
+function home(){
+	window.location.href ="{% url 'login' %}"
+}
 
 
 // var myEvent = {id: calEvent.id, start: calEvent.start, end: calEvent.end,
@@ -78,18 +116,43 @@
 
 var c = 0;
 var board = [0,0,0,0,0,0,0,0,0];
+
+savedBoard = []
 var flag = -1;
 
-var first_move = 0
-var go = ""
+var last_move = ''
+var go = 0
+	function getNumberFromString(str) { 
+ 
+            matches = str.match(/\d+/g); 
+            var i=0 
+          
+            
+              return matches
+          
+		} 
+
+
+
+
+
+
+
+
 
 function chance(id) //passing the first player information to view
 {	
 	if(id == 10) {
 		c = 2;
+		go =c
+		console.log(c)
+
 	}
 	else {
+		
 		c = 1;
+		go = 1
+		console.log(c)
 	}
     flag = 0;
 	var i;
@@ -99,23 +162,40 @@ function chance(id) //passing the first player information to view
 		y.value = "";
 	}
     for(var i = 0; i < board.length; i++) {
+		
+	
         board[i] = 0;
     }
     if(c == 1) {
-		go = "computer"
+		
         var x = Math.floor(Math.random() * 8);
-		first_move = x; 
+		 
         board[x] = 1;
         document.getElementById(x+1).value = 'X';
+		last_move='user'
     }
     else {
+		
         document.getElementById("result").innerHTML = "START THE GAME";
+		
     }
 }
+
+
+
+
+
 function change(xpos,ypos,id) //passing the user choice or move to view and updating the computer's move
 {   
+
+
+
+
+
+
     var y = document.getElementById(id);
     var index = 3*parseInt(xpos)+parseInt(ypos);
+	 
     if(c == 1) {
         if(y.value == "") {
     	   y.value = '0';
@@ -129,29 +209,47 @@ function change(xpos,ypos,id) //passing the user choice or move to view and upda
         }
     }
     if(c) {
+		
+		console.log('fffff',board)
+
+
         document.getElementById("result").innerHTML = "";
         $.ajax({
             url:"/handler/",
             type:"POST",
-            data:{"board[]":board, "first_move":first_move,"go_first":go},
+            data:{"board[]":board},
             cache:false,
-            success:function(json) {
-				
+            success: function(json) {
+				console.log(json	)
+		
+  
+
             	if(c == 1) {
             		if(json['res'] == 1) {
+
+
             			if(json['winner'] == 'comp') {
             				y = document.getElementById(json['val']+1);
             				y.value = 'X';
+							board[parseInt(json[['val']])] = 1;
+							savedBoard = [...board];
+
+
             				document.getElementById("result").innerHTML = "YOU LOST";
+							
             			}
+
+
             			else if(json['winner'] == 'player') {
             				document.getElementById("result").innerHTML = "YOU WON";
+							board[parseInt(json[['val']])] = 1;
             			}
             			else {
             				y = document.getElementById(json['val']+1);
             				y.value = 'X';
-
             				document.getElementById("result").innerHTML = "GAME DRAW";
+							board[parseInt(json[['val']])] = 1;
+
             			}
                         c = 0;
             		}
@@ -159,6 +257,9 @@ function change(xpos,ypos,id) //passing the user choice or move to view and upda
             			y1 = document.getElementById(json['val']+1);
                         board[parseInt(json[['val']])] = 1;
             			y1.value = 'X';
+						savedBoard = [...board];
+						
+
             		}
             	}
             	else {
@@ -166,15 +267,21 @@ function change(xpos,ypos,id) //passing the user choice or move to view and upda
             			if(json['winner'] == 'comp') {
             				y = document.getElementById(json['val']+1);
             				y.value = 'O';
+							
+
+							
             				document.getElementById("result").innerHTML = "YOU LOST";
+							board[parseInt(json[['val']])] = 1;
                             flag = 1;
             			}
             			else if(json['winner'] == 'player') {
             				document.getElementById("result").innerHTML = "YOU WON";
+							board[parseInt(json[['val']])] = 1;
                             flag = 1;
             			}
             			else {
             				document.getElementById("result").innerHTML = "GAME DRAW";
+							board[parseInt(json[['val']])] = 1;
                             flag = 1;
             			}
                         c = 0;
@@ -183,17 +290,172 @@ function change(xpos,ypos,id) //passing the user choice or move to view and upda
             			y1 = document.getElementById(json['val']+1);
             			y1.value = 'O';
                         board[parseInt(json[['val']])] = 1;
+						savedBoard = [...board];
+						last_move = "computer"
+	
+
+						
             		}
             	}
+
+				savedBoard = [...board];
+			
+			//storeGame(savedBoard)
+
+			console.log('saved game ',savedBoard)
+
             },
             error:function(json) {
                 alert(json['val']);
             }
         });
     }
+
+
+
 }
+
+function storeGame(){
+
+
+	$.ajax({
+            url:"/store_game/",
+            type:"POST",
+            data:{"board[]":board,"last_move":last_move , "go":go},
+            cache:false,
+
+			});
+
+
+				for(i = 0; i <9; i++) {
+					
+					var y = document.getElementById(i+1);
+					y.value = "";
+					
+			
+					
+				}
+
+			document.getElementById("result").innerHTML = "game saved</br>";
+
+
+
+}
+function loadGame(){
+
+
+	$.ajax({
+            url:"/load_game/",
+            type:"POST",
+            data:{"board[]":board},
+            cache:false, 
+			success:function(json) {
+
+			
+				document.getElementById("result").innerHTML = "loading last game...</br>";
+
+		
+
+			id =10
+				
+				if(id == 10) {
+					c = 2;
+					go =c
+					console.log(c)
+
+				}
+				else {
+					
+					c = 1;
+					go = 1
+					console.log(c)
+				}
+				flag = 0;
+				var i; 
+
+
+				board = [...json[1]]
+
+				var result=board.map(Number);
+
+				console.log('result',result)
+
+					for(i = 0; i <9; i++) {
+					console.log(result[i]==2)
+					if(result[i]==2){
+
+					var y = document.getElementById(i+1);
+					y.value = "X";
+					
+					}
+
+					else if(result[i]==1){
+					var y = document.getElementById(i+1);
+					y.value = "O";
+					}
+					else{
+					var y = document.getElementById(i+1);
+					y.value = "";
+					}
+					
+				}
+				
+		
+						
+
+			
+					
+
+
+
+}
+
+});
+
+	
+
+
+}
+
+
+
+
 
 </script>
 
 </section>
 {% endblock content %}
+
+
+
+           {% comment %} success:function(json) {
+				//here we are getting the host name and getting the boad in there is no winner 
+				console.log(window.location.hostname)
+				console.log(window.location.port)
+				var hst = window.location.hostname+':'+window.location.port
+				
+				console.log(json)
+
+				if (json[hst][3]=='v'){
+					console.log(json[hst][3])
+				}else{
+				x = getNumberFromString(json[hst])
+
+			
+
+				console.log(x)
+
+				if (json[hst])
+
+				for (i in x){
+					
+					oldBoard[i]=(parseInt(x[i]))
+				}
+				console.log(oldBoard)
+
+				}
+
+		
+
+
+    } {% endcomment %}

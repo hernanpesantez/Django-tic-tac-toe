@@ -32,6 +32,7 @@ section.home {
 }
 
 .navbar {
+    padding: 10px;
     margin-bottom: 0;
     background-color: #1a110e;
     z-index: 999;
@@ -110,4 +111,11 @@ ul {
     .logo {
         font-size: 150px;
     }
+}
+
+#search {
+    padding-top: 8px;
+    position: relative;
+    align-self: start;
+    color: #f5440e;
 }
