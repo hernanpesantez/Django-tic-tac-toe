@@ -3,10 +3,10 @@
 
 {% block content %}
   {% load static %}
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
     <link rel="stylesheet" type="text/css" href="{% static '/styles/about.css' %}?{% now "U" %}">
-
-
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+   
 <section class="line">
 <br>
 <br>
@@ -18,15 +18,21 @@
 <br>
 
 <div class="jumbotron">
-          <div class="row">
+     <div class="row">
             <div class="col-sm-6">
               <div class="card">
                 <img class="card-img-top1" src= {% static "styles/cropped_4.png" %} alt="Card image cap">
-          
                 <div class="card-body">
                   <h4 class="card-titleHernan">HERNAN PESANTEZ</h4>
                   <p class="card-textHernan">I'm a Student at Queens College, </br> majoring in Computer Science</p>
-                  <a href="#" class="btn-primaryHernan">Visit My LinkedIn</a>
+                  <div class ="mediaHernan">
+                    <ul>
+                      <li><a href="#" ><i class="fa fa-linkedin"></i></a></li>
+                      <li><a href="#" ><i class="fa fa-github"></i></a></li>
+                      <li><a href="#" ><i class="fa fa-twitter"></i></a></li>
+                    
+                     </ul>
+                   </div>
                 </div>
               </div>
             </div>
@@ -34,15 +40,22 @@
             <div class="col-sm-6">
               <div class="card">
                     <img class="card-img-top2" src= {% static "styles/20200128_075854.dorisPic.jpg" %} alt="Card image cap">
-          
-          
                 <div class="card-body">
-                  <h4 class="card-titleDoris">DORIS MORENO</h4>
-                  <p class="card-textDoris">I'm a Student at Queens College,, majoring in Computer Science</p>
-                  <a href="www.linkedin.com/in/doris-moreno-alvarez-25b287142" class="btn-primaryDoris">Visit My LinkedIn</a>
+                  <h4  class="card-titleDoris">DORIS MORENO</h4>
+                  <p  class="card-textDoris">I'm a Student at Queens College, majoring in Computer Science</p>
+                  <div class ="media">
+                   <ul>
+                     <li><a href="https://www.linkedin.com/in/doris-moreno-alvarez-25b287142/" ><i class="fa fa-linkedin"></i></a></li>
+                     <li><a href="https://github.com/dorismoreno" ><i class="fa fa-github"></i></a></li>
+                     <li><a href="https://twitter.com/dorismoreno927" ><i class="fa fa-twitter"></i></a></li>
+                     
+                 
+                    </ul>
+                  </div>
                 </div>
               </div>
             </div>
+      </div>
 </div>
 
 </section>

@@ -1,123 +1,92 @@
-
-p {
-    color: cornsilk;
-}
-
-.wrapper {
-    position: relative;
-    transform: translateY(-50%);
-    top: 390px;
-    margin: 0 auto;
-    width: 75%;
-    overflow: hidden;
-}
-
-.wrapper p {
-    position: absolute;
-    left: 100%;
-    width: 100%;
-    font-size: 2em;
-    color: #ffffff;
-    top: 0;
-    cursor: pointer;
-    opacity: 0;
-    transition: left 1.4s, opacity .5s ease;
-}
-
-.wrapper p.activeText {
-    position: relative;
-    left: 0;
-    opacity: 1;
-}
-
-.wrapper p.slideLeft {
-    left: -100%;
-    opacity: 0;
-}
-
-.wrapper p:before {
-    content: "\201C";
-    font-size: 3em;
-    line-height: 0.1em;
-    margin-right: 0.1em;
-    vertical-align: -0.4em;
-}
-
-.wrapper p:after {
-    content: "\201D";
-    font-size: 3em;
-    line-height: 0.1em;
-    margin-left: 0.1em;
-    vertical-align: -0.45em;
-}
-
-ul {
+body {
     margin: 0;
     padding: 0;
-    text-align: center;
-}
-
-ul li {
-    list-style: none;
-}
-
-.dot {
-    width: 10px;
-    height: 10px;
-    border-radius: 100px;
-    background: #7f8c8d;
-    display: inline-block;
-    text-lign: center;
-    cursor: pointer;
-}
-
-.active {
-    background: #ecf0f1;
-}
-
-.jumbotron {
-    background-color: #1e15225b;
-    color: #e1fd64;
-}
-
-/* Style inputs with type="text", select elements and textareas */
-input[type=text], select, textarea {
-    width: 100%; /* Full width */
-    padding: 12px; /* Some padding */ 
-    border: 1px solid #ccc; /* Gray border */
-    border-radius: 4px; /* Rounded borders */
-    box-sizing: border-box; /* Make sure that padding and width stays in place */
-    margin-top: 6px; /* Add a top margin */
-    margin-bottom: 16px; /* Bottom margin */
-    resize: vertical /* Allow the user to vertically resize the textarea (not horizontally) */
-  }
+    background-size: cover;
+    background-position: center;
+    font-family: sans-serif;
+    
+    }
+    .jumbotron {
+        background-color: #1e15225b;   
+    }
+    
+    .contac-title
+    {
+        margin-top: 100px;
+        color:#fff;
+        text-transform:uppercase;
+        transition: all 4s ease-in-out;
+    }
+    
+    
+    .contac-title h1
+    { 
+        font-size: 32px;
+        line-height: 10px;
+         text-align: center;
+       
+    }
+    
+    .contac-title h2
+    {
+        font-size: 16px;
+        text-align: center;
+        margin-top: 10px;
+    }
+    form{
+        transition: all 4s ease-in-out;
+    
+        
+    }
+    @media screen and (max-width: 800px) {
+        .container1> .form-control{
+          width: 100%; /* The width is 100%, when the viewport is 800px or smaller */
+        }
+      }
+      @media screen and (max-width: 800px) {
+        .container1{
+          width: 100%; /* The width is 100%, when the viewport is 800px or smaller */
+        }
+      }
+      .container1> .form-control
+    {
+        width: 500px;
+        background: transparent;
+        border:none;
+        outline: none;
+        border-bottom: 1px solid gray;
+        color: #fff;
+        font-size: 18px;
+        margin-bottom: 16px;
+       
+        
+    }
+    input{
+        height: 45px;
+    }
+    form .submit
+    {
+        background: #044649;
+        border-color: transparent;
+        color: #fff;
+        font-size: 20px;
+        font-weight: bold;
+        letter-spacing: 2px;
+        height: 50px;
+        margin-top:20 px;
+    
+    }
   
-  /* Style the submit button with a specific background color etc */
-  input[type=submit] {
-    background-color: #45538f;
-    color:black;
-    padding: 12px 20px;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    text-align: center;
-  }
-  
-  /* When moving the mouse over the submit button, add a darker green color */
-  input[type=submit]:hover {
-    background-color: #d1d2db;
-  }
-  
-  /* Add a background color and some padding around the form */
+   /*Add a background color and some padding around the form */
   .container1 {
     border-radius: 5px;
-    background-color: #8a9781;
+    background-color: rgb(28, 48, 48);
     padding: 90px;
     width: 600px;
     height:690px;
-    color: black;
+    color: white;
     margin:auto;
-    border: 7px solid #1b1714
+   
 
   }
   
