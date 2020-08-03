@@ -4,89 +4,84 @@ body {
     background-size: cover;
     background-position: center;
     font-family: sans-serif;
-    
-    }
-    .jumbotron {
-        background-color: #1e15225b;   
-    }
-    
-    .contac-title
-    {
-        margin-top: 100px;
-        color:#fff;
-        text-transform:uppercase;
-        transition: all 4s ease-in-out;
-    }
-    
-    
-    .contac-title h1
-    { 
-        font-size: 32px;
-        line-height: 10px;
-         text-align: center;
-       
-    }
-    
-    .contac-title h2
-    {
-        font-size: 16px;
-        text-align: center;
-        margin-top: 10px;
-    }
-    form{
-        transition: all 4s ease-in-out;
-    
-        
-    }
-    @media screen and (max-width: 800px) {
-        .container1> .form-control{
-          width: 100%; /* The width is 100%, when the viewport is 800px or smaller */
-        }
-      }
-      @media screen and (max-width: 800px) {
-        .container1{
-          width: 100%; /* The width is 100%, when the viewport is 800px or smaller */
-        }
-      }
-      .container1> .form-control
-    {
-        width: 500px;
-        background: transparent;
-        border:none;
-        outline: none;
-        border-bottom: 1px solid gray;
-        color: #fff;
-        font-size: 18px;
-        margin-bottom: 16px;
-       
-        
-    }
-    input{
-        height: 45px;
-    }
-    form .submit
-    {
-        background: #044649;
-        border-color: transparent;
-        color: #fff;
-        font-size: 20px;
-        font-weight: bold;
-        letter-spacing: 2px;
-        height: 50px;
-        margin-top:20 px;
-    
-    }
-  
-   /*Add a background color and some padding around the form */
-  .container1 {
-    border-radius: 5px;
-    background-color: rgb(28, 48, 48);
-    padding: 90px;
-    width: 600px;
-    height:690px;
-    color: white;
-    margin:auto;
-   
+}
 
-  }
-  
+.jumbotron {
+    background-color: #1e15225b;
+}
+
+.contac-title {
+    margin-top: 100px;
+    color: #fff;
+    text-transform: uppercase;
+    transition: all 4s ease-in-out;
+}
+
+.contac-title h1 {
+    font-size: 32px;
+    line-height: 10px;
+    text-align: center;
+}
+
+.contac-title h2 {
+    font-size: 16px;
+    text-align: center;
+    margin-top: 10px;
+}
+
+form {
+    transition: all 4s ease-in-out;
+}
+
+@media screen and (max-width: 800px) {
+    .container1>.form-control {
+        width: 100%;
+        /* The width is 100%, when the viewport is 800px or smaller */
+    }
+}
+
+@media screen and (max-width: 800px) {
+    .container1 {
+        width: 100%;
+        /* The width is 100%, when the viewport is 800px or smaller */
+    }
+}
+
+.container1>.form-control {
+    width: 500px;
+    background: transparent;
+    border: none;
+    outline: none;
+    border-bottom: 1px solid gray;
+    color: #fff;
+    font-size: 18px;
+    margin-bottom: 16px;
+}
+
+input {
+    height: 45px;
+}
+
+form .submit {
+    background: #044649;
+    border-color: transparent;
+    color: #fff;
+    font-size: 20px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    height: 50px;
+    margin-top: 20 px;
+}
+
+
+/*Add a background color and some padding around the form */
+
+.container1 {
+    border-radius: 5px;
+    background-color: #131f25;
+    padding: 90px;
+    width: 550pt;
+    height: 690px;
+    color: white;
+    margin: auto;
+}

@@ -1,27 +1,30 @@
 p {
     color: rgb(35, 141, 212);
 }
-h3{
-  color: #cfe8e9;
-  text-align: justify;
-  font-size: large;
-  
+
+h3 {
+    color: #cfe8e9;
+    text-align: justify;
+    font-size: large;
 }
-.double{
-  line-height: 2 ;
+
+.double {
+    line-height: 2;
 }
-.play{
-  background-color: #afad4c;
-  border: none;
-  color: black;
-  padding: 15px 32px;
-  text-align: center;
-  text-decoration: navy;
-  display: inline-block;
-  font-size: 16px;
-  margin: 4px 2px;
-  cursor: pointer;
+
+.play {
+    background-color: #afad4c;
+    border: none;
+    color: black;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: navy;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
 }
+
 .wrapper {
     position: relative;
     transform: translateY(-50%);
@@ -95,6 +98,16 @@ ul li {
 }
 
 .jumbotron {
-    background-color: #1e15225b;
+    background-color: #1e152200;
     color: #eaf0ea;
+}
+
+#playgoogle {
+    position: relative;
+    left: 60px;
+}
+
+#playneave {
+    position: relative;
+    left: 60px;
 }

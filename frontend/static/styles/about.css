@@ -51,10 +51,11 @@ p {
 }
 
 @media screen and (max-width: 800px) {
-    .row>.col-sm-6>.card>.card-img-top1>.card-body{
-      width: 100%; /* The width is 100%, when the viewport is 800px or smaller */
+    .row>.col-sm-6>.card>.card-img-top1>.card-body {
+        width: 100%;
+        /* The width is 100%, when the viewport is 800px or smaller */
     }
-  }
+}
 
 ul {
     margin: 0;
@@ -84,12 +85,12 @@ ul li {
     background-color: #1e15225b;
     color: #eaf0ea;
 }
+
 .card-img-top1 {
     width: 45%;
     height: 45%;
     border-radius: 50%;
     position: relative;
-    
 }
 
 .card-img-top2 {
@@ -97,102 +98,64 @@ ul li {
     width: 220px;
     border-radius: 70%;
     margin-left: 190px;
-  
 }
-.card-titleHernan{
-   color: cornflowerblue;
+
+.card-titleHernan {
+    color: cornflowerblue;
     margin-left: 35px;
 }
-.card-textHernan{
-    text-align: justify;
-    line-height: 2 ;
 
-}
-.card-titleDoris{
-   color: cornflowerblue;
-   margin-left: 230px;
-}
-.card-textDoris{
+.card-textHernan {
     text-align: justify;
-    line-height: 2 ;
+    line-height: 2;
+}
+
+.card-titleDoris {
+    color: cornflowerblue;
+    margin-left: 230px;
+}
+
+.card-textDoris {
+    text-align: justify;
+    line-height: 2;
     margin-left: 190px;
-
 }
 
-
-.btn-primaryDoris{
+.btn-primaryDoris {
     margin-left: 250px;
     text-size-adjust: large;
-  
 }
-.btn-primaryHernan{
+
+.btn-primaryHernan {
     margin-left: 100px;
-
-  
 }
-.media ul{
-    display:flex;
 
+.media ul {
+    display: flex;
 }
+
 .media ul li {
-    list-style:none;
-    margin:0 15px;
+    list-style: none;
+    margin: 0 15px;
 }
-.media ul li .fa{
+
+.media ul li .fa {
     font-size: 30px;
     line-height: 60px;
     transition: 0.6s;
     color: black;
 }
-.media ul li .fa:hover{
-    color:#fff
-}
-.media ul li a{
-    position:relative;
-    display: list-item;
-    width: 60px;
-    height: 60px;
-    border-radius: 50%;
-    background-color: #fff;
-    text-emphasis: center;
-     transition: .6s;
-    box-shadow: 0 5px 4px rgba(0,0,0,5);
-    float: left;
+
+.media ul li :hover {
+    color: rgb(75, 4, 4)
 }
 
-.media ul li a:hover{
-    transform : translate(0, -10px);
-}
-.media ul li:nth-child(1) a{
-    background-color: #0077B5;
-}
-.media ul li:nth-child(3) a{
-    background-color: #55acee;;
-}
-.media{
-    margin-left: 200px;
+.fa:hover {
+    color: rgb(26, 3, 3)
 }
 
-/*   same styling but for second person*/
-.mediaHernan ul{
-    display:flex;
-
-}
-.mediaHernan ul li {
-    list-style:none;
-    margin:0 15px;
-}
-.mediaHernan ul li .fa{
-    font-size: 30px;
-    line-height: 60px;
-    transition: 0.6s;
-    color: black;
-}
-.mediaHernan ul li .fa:hover{
-    color:#fff
-}
-.mediaHernan ul li a{
-    position:relative;
+.media ul li a {
+    position: relative;
     display: list-item;
     width: 60px;
     height: 60px;
@@ -200,20 +163,79 @@ ul li {
     background-color: #fff;
     text-emphasis: center;
     transition: .6s;
-    box-shadow: 0 5px 4px rgba(0,0,0,5);
+    box-shadow: 0 5px 4px rgba(0, 0, 0, 5);
     float: left;
 }
 
-.mediaHernan ul li a:hover{
-    transform : translate(0, -10px);
-}
-.mediaHernan ul li:nth-child(1) a{
-    background-color: #0077B5;
-}
-.mediaHernan ul li:nth-child(3) a{
-    background-color: #55acee;
-}
-.mediaHernan{
-    margin-right: 50px;
+.media ul li a:hover {
+    transform: translate(0, -10px);
 }
 
+.media ul li:nth-child(1) a {
+    background-color: #0077B5;
+}
+
+.media ul li:nth-child(3) a {
+    background-color: #55acee;
+    ;
+}
+
+.media {
+    margin-left: 200px;
+}
+
+
+/*   same styling but for second person*/
+
+.mediaHernan ul {
+    display: flex;
+}
+
+.mediaHernan ul li {
+    list-style: none;
+    margin: 0 15px;
+}
+
+.mediaHernan ul li .fa {
+    font-size: 30px;
+    line-height: 60px;
+    transition: 0.6s;
+    color: black;
+}
+
+.mediaHernan ul li .fa:hover {
+    color: rgb(75, 4, 4)
+}
+
+.fa:hover {
+    color: rgb(26, 3, 3)
+}
+
+.mediaHernan ul li a {
+    position: relative;
+    display: list-item;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background-color: #fff;
+    text-emphasis: center;
+    transition: .6s;
+    box-shadow: 0 5px 4px rgba(0, 0, 0, 5);
+    float: left;
+}
+
+.mediaHernan ul li a:hover {
+    transform: translate(0, -10px);
+}
+
+.mediaHernan ul li:nth-child(1) a {
+    background-color: #0077B5;
+}
+
+.mediaHernan ul li:nth-child(3) a {
+    background-color: #55acee;
+}
+
+.mediaHernan {
+    margin-right: 50px;
+}

@@ -2,7 +2,10 @@ from django.shortcuts import render
 from django.http import HttpResponse
 import json
 
-from .models import UserMoves
+from .models import UserMoves, Contact
+
+from django.contrib import messages
+
 
 # Create your views here.
 def home_view(request, *args, **kwargs):
@@ -33,7 +36,44 @@ from random import randint
 from django.views.decorators.csrf import csrf_exempt
 
 
+@csrf_exempt
+def contact_index(request):
+    	
+	if request.method == 'POST':
+		if request.user.is_authenticated:
+		
+			print(request.body)
+			name = request.POST.get('name')
+			email = request.POST.get('email')
+			message = request.POST.get('message')
 
+			messages.success(request, f'Thank you for getting in touch, we\'ll get back you shortly')
+			
+
+			c = Contact(name=name, email=email, message=message,user=request.user)
+			c.save()
+
+
+			print(name, email, message)
+		else:
+			print(request.body)
+			name = request.POST.get('name')
+			email = request.POST.get('email')
+			message = request.POST.get('message')
+
+			messages.success(request, f'Thank you for getting in touch, we\'ll get back you shortly')
+
+
+			c = Contact(name=name, email=email,message=message)
+			c.save()
+
+
+			print(name, email, message)
+    			
+    			
+
+
+	return render(request, 'index.html'   ,{}) #pass data
 
 
 xpos = -1
@@ -181,56 +221,19 @@ def index(request): #when the user submits his choice
 
 
 
-		with open('test.json') as json_file: 
-			data = json.load(json_file) 
-
-			temp = data['moves'] 
-
-			# python object to be appended 
-
-
-
-			# appending data to emp_details  
-			temp.append(moves) 
       
 		write_json(data)  
 
 
 		if(s == -10):
-			# print(request.body)
-			with open('test.json') as json_file: 
-				data = json.load(json_file) 
-
-				temp = data['moves'] 
-
-				# python object to be appended 
-
-
-
-				# appending data to emp_details  
-				# temp.append({'val':0,'res':1,'winner':'player'}) 
-      
-			write_json(data)  
+	
 
 
 
 			return JsonResponse({'val':0,'res':1,'winner':'player'})
 		elif(checkdraw(a) == 1):
 
-						# print(request.body)
-			with open('test.json') as json_file: 
-				data = json.load(json_file) 
-
-				temp = data['moves'] 
-
-				# python object to be appended 
-
-				# x = {request.get_host():str([{'val':0,'res':1,'winner':'draw'}])}
-
-				# appending data to emp_details  
-				# temp.append(x) 
-      
-			# write_json(data)  	    			
+		    			
 
 			return JsonResponse({'val':0,'res':1,'winner':'draw'})
 
@@ -238,39 +241,13 @@ def index(request): #when the user submits his choice
 		a[xpos][ypos] = 1
 		s = score(a,1,2,1)
 		if(s == 10):
-						# print(request.body)
-			with open('test.json') as json_file: 
-				data = json.load(json_file) 
-
-				temp = data['moves'] 
-
-				# python object to be appended 
-
-				# x = {request.get_host():str([{'val':xpos*3+ypos,'res':1,'winner':'comp'}])}
-
-				# appending data to emp_details  
-				# temp.append(x) 
-      
-			# write_json(data)  			
+				
 		
 		
 			return JsonResponse({'val':xpos*3+ypos,'res':1,'winner':'comp'})
 			
 		elif(checkdraw(a) == 1):
-						# print(request.body)
-			with open('test.json') as json_file: 
-				data = json.load(json_file) 
-
-				temp = data['moves'] 
-
-				# python object to be appended 
-
-				x = {request.get_host():str([{'val':xpos*3+ypos,'res':1,'winner':'draw'}])}
-
-				# appending data to emp_details  
-				# temp.append(x) 
-      
-			# write_json(data)  
+		
 		
 			return JsonResponse({'val':xpos*3+ypos,'res':1,'winner':'draw'})
 
@@ -305,12 +282,21 @@ def store_game(request):
     	
 	if request.user.is_authenticated:
     		
+
+		with open('test.json') as json_file: 
+			data = json.load(json_file) 
+
+			temp = data['moves'] 
+
+	
+    		
 		board = request.POST.getlist('board[]')
 
 		user =  str(request.user.id)
 
-		
-		# print(request.user.is_authenticated)
+		temp.append(board) 
+	
+		write_json(data) 	
 		
 
 		data = {1:board}
@@ -354,3 +340,6 @@ def load_game(request):
 
 
 	return JsonResponse(data)
+
+
+
