@@ -6,63 +6,47 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
     <link rel="stylesheet" type="text/css" href="{% static '/styles/about.css' %}?{% now "U" %}">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-   
+    
 <section class="line">
 <br>
 <br>
 <br>
 <br>
 </section>
-
-<section class="container">
-<br>
-
-<div class="jumbotron">
-     <div class="row">
-            <div class="col-sm-6">
-              <div class="card">
-                <img class="card-img-top1" src= {% static "styles/hernan.jpg" %} alt="Card image cap">
-                <div class="card-body">
-                  <h4 class="card-titleHernan">HERNAN PESANTEZ</h4>
-                  <p class="card-textHernan">I'm a Student at Queens College, </br> majoring in Computer Science</p>
-                  <div class ="mediaHernan">
-                  </br>
-                   </br>
-                   </br>
-                    <ul>
-                      <li><a href="https://www.linkedin.com/in/hernan-pesantez-856aba2b/" ><i class="fa fa-linkedin"></i></a></li>
-                      <li><a href="https://github.com/hernanpesantez" ><i class="fa fa-github"></i></a></li>
-                      <li><a href="https://twitter.com/HERNANPESANTEZ1" ><i class="fa fa-twitter"></i></a></li>
-                    
-                     </ul>
-                   </div>
-                </div>
-              </div>
-            </div>
-
-            <div class="col-sm-6">
-              <div class="card">
-                    <img class="card-img-top2" src= {% static "styles/20200128_075854.dorisPic.jpg" %} alt="Card image cap">
-                <div class="card-body">
-                  <h4  class="card-titleDoris">DORIS MORENO</h4>
-                  <p  class="card-textDoris">I'm a Student at Queens College, majoring in Computer Science</p>
-                  <div class ="media">
-                  </br>
-                   <ul>
-                     <li><a href="https://www.linkedin.com/in/doris-moreno-alvarez-25b287142/" ><i class="fa fa-linkedin"></i></a></li>
-                     <li><a href="https://github.com/dorismoreno" ><i class="fa fa-github"></i></a></li>
-                     <li><a href="https://twitter.com/dorismoreno927" ><i class="fa fa-twitter"></i></a></li>
-                     
-                 
-                    </ul>
-                  </div>
-                </div>
-              </div>
-            </div>
+<body>
+  <div class="wrapper">
+    <h1 style="color:cornflowerblue;">Our Team</h1>
+    <div class="team">
+      <div class="team_member">
+        <div class="team_img">
+          <img src= {% static "styles/hernan.jpg" %} alt="Team_image" style="border-radius: 50%;">
+        </div>
+        <h3>Hernan Pezantes</h3>
+        <p class="role"> Full-stack Developer</p>
+        <p>I am Queens College Student, Majoring in computer science</p>
+        <div class="media"> <ul>
+          <li><a href="https://www.linkedin.com/in/hernan-pesantez-856aba2b/" ><i class="fa fa-linkedin"></i></a></li>
+          <li><a href="https://github.com/hernanpesantez" ><i class="fa fa-github"></i></a></li>
+          <li><a href="https://twitter.com/HERNANPESANTEZ1" ><i class="fa fa-twitter"></i></a></li>
+         </ul></div>
       </div>
-</div>
-
-</section>
+      <div class="team_member">
+        <div class="team_img">
+          <img src= {% static "styles/20200128_075854.dorisPic.jpg" %} alt="Team_image" style="border-radius: 50%;">
+        </div>
+        <h3>Doris Moreno</h3>
+        <p class="role">Front-end Developer</p>
+        <p>I am Queens College Student, Majoring in computer science</p>
+        <div class="media"><ul>
+          <li><a href="https://www.linkedin.com/in/doris-moreno-alvarez-25b287142/" ><i class="fa fa-linkedin"></i></a></li>
+          <li><a href="https://github.com/dorismoreno" ><i class="fa fa-github"></i></a></li>
+          <li><a href="https://twitter.com/dorismoreno927" ><i class="fa fa-twitter"></i></a></li>
+         </ul></div>
+         </div>
+    </div>
+  </div>
+  
+  </body>
 
 
 

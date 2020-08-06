@@ -13,18 +13,38 @@ h3 {
 }
 
 .play {
-    background-color: #afad4c;
-    border: none;
-    color: black;
-    padding: 15px 32px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 200px;
+    height: 60px;
     text-align: center;
-    text-decoration: navy;
-    display: inline-block;
-    font-size: 16px;
-    margin: 4px 2px;
-    cursor: pointer;
+    line-height: 60px;
+    color: black;
+    border: none;
+    font-size: 24px;
+    text-transform: uppercase;
+    text-decoration: none;
+    font-family:  sans-serif;
+    box-sizing: border-box;
+    background: linear-gradient(90deg,#ffeb3b, #2b4c52, #ffeb3b, #2b4c52);
+    border-radius: 30px;
 }
-
+.play :hover{
+    animation: animate 8s linear infinite;
+}
+@keyframes animate
+{
+    0%
+    {
+       background-position: 0%;
+    }
+    100%
+    {
+       background-position: 400%;
+    }
+}
 .wrapper {
     position: relative;
     transform: translateY(-50%);
@@ -110,4 +130,8 @@ ul li {
 #playneave {
     position: relative;
     left: 60px;
+}
+#playGameable {
+    position: relative;
+    left: 80px;
 }

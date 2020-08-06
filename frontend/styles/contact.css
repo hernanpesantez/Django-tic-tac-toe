@@ -1,73 +1,31 @@
-h1,
-h2 {
-    color: rgb(224, 233, 233);
+body{
+    margin: 0;
+    padding: 0;
+    background: transparent;
+    background-size: cover;
 }
-
-* {
-    box-sizing: border-box;
+.contact-form{
+    width:85%;
+    max-width: 600px;
+    background: #f1f1f1;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
 }
-
-
-/* Style inputs */
-
-input[type=text],
-select,
-textarea {
-    width: 100%;
-    padding: 12px;
-    border: 1px solid rgb(184, 159, 159);
-    margin-top: 6px;
-    margin-bottom: 16px;
-    resize: vertical;
+.contact-form h1{
+    margin-top: 0;
+    font-weight: 200;
 }
-
-input[type=submit] {
-    background-color: #4CAF50;
-    color: white;
-    padding: 12px 20px;
-    border: none;
-    cursor: pointer;
+.txtb{
+    border: 1px solid grey;
+    margin: 8px 0;
+    padding: 12px 18px;
+   border-radius: 8px;
 }
-
-input[type=submit]:hover {
-    background-color: #45a049;
-}
-
-
-/* Style the container/contact section */
-
-
-/* Create two columns that float next to eachother */
-
-.column {
-    float: left;
-    width: 50%;
-    margin-top: 6px;
-    padding: 20px;
-}
-
-.card-img-top1 {
-    width: 20%;
-    height: 20%;
-    border-radius: 50%;
-}
-
-.card-img-top2 {
-    max-width: 40%;
-    max-height: %;
-    border-radius: 50%;
-}
-
-
-/* Clear floats after the columns */
-
-.row:after {
-    content: "";
-    display: table;
-    clear: both;
-}
-
-.jumbotron {
-    background-color: #1e15225b;
-    color: #eaf0ea;
+.txtb label{
+    display: block;
+    text-align: left;
+    color: cornflowerblue;
+    text-transform: uppercase;
 }

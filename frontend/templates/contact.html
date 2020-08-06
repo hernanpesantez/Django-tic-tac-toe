@@ -3,42 +3,42 @@
 {% block content %}
     {% load static %}
 
-<link rel="stylesheet" type="text/css" href="{% static '/styles/contact.css' %}?{% now "U" %}">
 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <link rel="stylesheet" type="text/css" href="{% static '/styles/contact.css' %}?{% now "U" %}">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <section class="line">
+      <br>
+      <br>
+      <br>
+      <br>
+      </section>
+ 
 
+ 
+ <body>
 
+   <div class="contact-form">
+     <h1>Contact us</h1>
+     <form method ="POST" action="/contact_index/"></form>
+     <div class='txtb'>
+      <label>Full Name :</label>
+      <input type ="text" name="" value="" placeholder="Enter Your Name">
+    </div>
+     <div class='txtb'>
+       <label>Email :</label>
+       <input type ="email" name="" value="" placeholder="Enter Your Email">
+     </div>
+    <div class='txtb'>
+      <label>Message :</label>
+      <textarea></textarea>
+    </div>
+    <input class=" btn" type="submit" value="SEND">
+    </form>
+  </div>
 
-</section> 
+</body>
 
-<section class="container">
-  <div class="jumbotron"></div>>
-<div class="container1">
-  <div class="contac-title">
-    <h1>Say Hello<h1>
-    <h2>We will like to hear from you!</h2>
-</div>
-   <div class ="contact-form">
-  <form id ="contact-from" method="post" action="/contact_index/">
-    <input name="name" type="text" class="form-control"  placeholder="Your Name" required><br>
-   <input name="email" type="email" class="form-control"  placeholder="Your Email" required><br>
-      <textarea name="message" class="form-control" placeholder="Message" row ="4" required></textarea><br>
-      <input type="submit" class="form-control submit" value="SEND MESSAGE">
-</form>
-
-
-
-</div>
-</div>
-
-
-
-
-
-
-</section>
-
-
-
-
-
+    
 {% endblock content %}
+<!-- method="post" action="/contact_index/" -->
