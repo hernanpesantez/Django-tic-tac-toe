@@ -1,6 +1,7 @@
 {% extends 'home.html' %} 
 
 
+
 {% block content %}
   {% load static %}
 
@@ -16,15 +17,19 @@
 </section>
 
 
+</br>
+</br>
+</br>
+
 
 <section class="container">
-<div id = "header">
-<h1 id="result"></h1>
-</div>
-<br>
+
 
 <div class="jumbotron" >
 
+<div id = "header">
+<h4 id="result"></h4>
+</div>
 
 <div id="load">
 	
@@ -76,7 +81,7 @@
 
 
         <h4 class="text-muted"><a class = "ml-2" href={% url 'login' %}>Log In </a> to Save Your Game</h4>
-        <h4 class="text-muted">Need An Account <a class = "ml-2" href={% url 'register' %}>Sign In</a>
+        <h4 class="text-muted">Need An Account <a class = "ml-2" href={% url 'register' %}>Sign Up</a>
 
       
         {% endif %}  
@@ -223,7 +228,6 @@ function change(xpos,ypos,id) //passing the user choice or move to view and upda
 				console.log(json	)
 		
   
-
             	if(c == 1) {
             		if(json['res'] == 1) {
 
@@ -238,7 +242,6 @@ function change(xpos,ypos,id) //passing the user choice or move to view and upda
             				document.getElementById("result").innerHTML = "YOU LOST";
 							
             			}
-
 
             			else if(json['winner'] == 'player') {
             				document.getElementById("result").innerHTML = "YOU WON";

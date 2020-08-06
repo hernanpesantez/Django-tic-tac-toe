@@ -1,9 +1,17 @@
 .jumbotron {
     position: relative;
-    background-color: #131f25;
-    width: 75%;
-    margin-top: 100px;
-    margin: auto;
+    width: 100%;
+    max-width: 600px;
+    background: #162726;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 30px 40px;
+    box-sizing: border-box;
+    border-radius: 8px;
+    /* text-align: center; */
+    box-shadow: 0 0 20px #000000;
 }
 
 .form-group {

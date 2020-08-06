@@ -1,15 +1,23 @@
 .jumbotron {
     position: relative;
-    background-color: #131f25;
-    width: 75%;
-    margin-top: 100px;
-    margin: auto;
+    width: 100%;
+    max-width: 600px;
+    background: #162726;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 30px 40px;
+    box-sizing: border-box;
+    border-radius: 8px;
+    text-align: center;
+    box-shadow: 0 0 20px #000000;
 }
 
 .form-group {
     /* padding-left: 40px;
     padding-right: 40px; */
-    background-color: #131f25;
+    background-color: #162726;
     font-family: Montserrat, sans-serif;
     display: flex;
     flex-direction: column;
@@ -35,11 +43,11 @@ input {
 }
 
 #id_userneme {
-    color: rgb(36, 39, 39);
+    color: #162726;
     background-color: #cfe8e9;
 }
 
 #login {
-    color: rgb(36, 39, 39);
+    color: #162726;
     background-color: #cfe8e9;
 }

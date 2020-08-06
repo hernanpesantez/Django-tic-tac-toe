@@ -35,26 +35,24 @@
 }
 
 #header h1 {
-    top: 100px;
-    left: 600px;
-    position: absolute;
-    text-shadow: 2px 2px rgb(4, 40, 245);
+    /* position: absolute; */
+    /* text-shadow: 2px 2px rgb(4, 40, 245); */
     margin: 20px;
-    text-align: center;
+    /* text-align: center; */
     color: #e9e3e3;
     font-family: Montserrat, sans-serif;
     border: #f0f0f0;
 }
 
 #header {
-    text-shadow: 2px 2px rgb(219, 6, 6);
-    position: absolute;
+    top: 10px;
+    z-index: 20;
+    position: relative;
     text-align: center;
     font-family: Montserrat, sans-serif;
 }
 
-h5 {
-    text-shadow: 2px 2px rgb(219, 6, 6);
+h4 {
     position: relative;
     color: rgb(248, 248, 248);
     font-family: Montserrat, sans-serif;
@@ -122,7 +120,18 @@ h5 {
 
 .jumbotron {
     position: relative;
-    background-color: #1e15225b;
+    width: 100%;
+    max-width: 600px;
+    background: #162726;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 30px 40px;
+    box-sizing: border-box;
+    border-radius: 8px;
+    text-align: center;
+    box-shadow: 0 0 20px #000000;
 }
 
 #load {
