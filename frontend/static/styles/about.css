@@ -30,10 +30,10 @@
   }
   
   .team .team_member{
-    background: rgb(36, 63, 65);
+    background: rgb(26, 43, 44);
     margin: 5px;
     margin-bottom: 50px;
-    width: 300px;
+    width: 480px;
     padding: 20px;
     line-height: 20px;
     color: rgb(231, 243, 243);  
@@ -52,7 +52,15 @@
     font-size: 12px;
     text-transform: uppercase;
   }
-  
+  .team .team_member p.description{
+    color: rgb(231, 243, 243);
+    margin: 12px 0;
+    font-size: 16px;
+    text-align: center;
+    font-family: sans-serif;
+
+
+  }
   .team .team_member .team_img{
     position: absolute;
     top: -50px;
@@ -107,7 +115,7 @@
 }
 
 .media ul li a:hover {
-    transform: translate(0, -10px);
+    transform: translate(0, 2px);
 }
 
 .media ul li:nth-child(1) a {
@@ -116,12 +124,14 @@
 
 .media ul li:nth-child(3) a {
     background-color: #55acee;
-    ;
+    
 }
 
 .media {
     text-emphasis: center;
-    float:right;
-    
+    float: left;
+    text-align: center;
+    margin-left: 80px;
 }
+    
  
