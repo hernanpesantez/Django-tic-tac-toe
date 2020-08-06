@@ -6,7 +6,7 @@ body{
 .contact-form{
     width:85%;
     max-width: 600px;
-    background: #162726;
+    background: #10201f;
     position: absolute;
     top: 50%;
     left: 50%;
@@ -36,7 +36,7 @@ body{
     font-size: 14px;
 }
 .txtb input{
-   color: white;
+   color: black;
 }
 .txtb input, .txtb textarea{
     width: 100%;
@@ -48,9 +48,9 @@ body{
 }
 .btn{
     display: inline-block;
-    background: darkkhaki;
+    background: rgb(170, 194, 196);
     padding: 14px 0;
-    color:rgb(197, 232, 235);
+    color:rgb(26, 35, 36);
     text-transform: uppercase;
     cursor: pointer;
     margin-top: 8px;
