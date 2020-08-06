@@ -1,44 +1,51 @@
-body{
+body {
     margin: 0;
     padding: 0;
     background-size: cover;
 }
-.contact-form{
-    width:85%;
+
+.contact-form {
+    width: 85%;
     max-width: 600px;
-    background: #10201f;
+    background: #162726;
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%,-50%);
+    transform: translate(-50%, -50%);
     padding: 30px 40px;
     box-sizing: border-box;
     border-radius: 8px;
     text-align: center;
     box-shadow: 0 0 20px #000000;
 }
-.contact-form h1{
+
+.contact-form h1 {
     margin-top: 0;
     font-weight: 200;
     color: rgb(197, 232, 235);
 }
-.txtb{
+
+.txtb {
     border: 1px solid grey;
     margin: 8px 0;
     padding: 12px 18px;
-   border-radius: 8px;
+    border-radius: 8px;
 }
-.txtb label{
+
+.txtb label {
     display: block;
     text-align: left;
     color: rgb(197, 232, 235);
     text-transform: uppercase;
     font-size: 14px;
 }
-.txtb input{
-   color: black;
+
+.txtb input {
+    color: black;
 }
-.txtb input, .txtb textarea{
+
+.txtb input,
+.txtb textarea {
     width: 100%;
     border: none;
     background: none;
@@ -46,15 +53,14 @@ body{
     margin-top: 6px;
     color: white;
 }
-.btn{
+
+.btn {
     display: inline-block;
     background: rgb(170, 194, 196);
     padding: 14px 0;
-    color:rgb(26, 35, 36);
+    color: rgb(26, 35, 36);
     text-transform: uppercase;
     cursor: pointer;
     margin-top: 8px;
     width: 100%;
-
-
 }

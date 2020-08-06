@@ -27,17 +27,10 @@ body {
     text-align: center;
     flex-wrap: wrap;
     column-gap: 100px;
-<<<<<<< HEAD
 }
 
 .team .team_member {
-    background: rgb(36, 63, 65);
-=======
-  }
-  
-  .team .team_member{
     background: rgb(26, 43, 44);
->>>>>>> 1bdd6dce0613c49b57d0cd0dd691f66c741c1717
     margin: 5px;
     margin-bottom: 50px;
     width: 480px;
@@ -58,23 +51,17 @@ body {
     margin: 12px 0;
     font-size: 12px;
     text-transform: uppercase;
-<<<<<<< HEAD
 }
 
-.team .team_member .team_img {
-=======
-  }
-  .team .team_member p.description{
+.team .team_member p.description {
     color: rgb(231, 243, 243);
     margin: 12px 0;
     font-size: 16px;
     text-align: center;
     font-family: sans-serif;
+}
 
-
-  }
-  .team .team_member .team_img{
->>>>>>> 1bdd6dce0613c49b57d0cd0dd691f66c741c1717
+.team .team_member .team_img {
     position: absolute;
     top: -50px;
     left: 50%;
@@ -129,11 +116,7 @@ body {
 }
 
 .media ul li a:hover {
-<<<<<<< HEAD
     transform: translate(0, 10px);
-=======
-    transform: translate(0, 2px);
->>>>>>> 1bdd6dce0613c49b57d0cd0dd691f66c741c1717
 }
 
 .media ul li:nth-child(1) a {
@@ -142,19 +125,10 @@ body {
 
 .media ul li:nth-child(3) a {
     background-color: #55acee;
-    
 }
 
 .media {
+    justify-content: center;
     text-emphasis: center;
-<<<<<<< HEAD
     float: right;
 }
-=======
-    float: left;
-    text-align: center;
-    margin-left: 80px;
-}
-    
- 
->>>>>>> 1bdd6dce0613c49b57d0cd0dd691f66c741c1717
