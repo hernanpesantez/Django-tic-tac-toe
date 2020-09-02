@@ -46,7 +46,6 @@ and the program will swap the two images that were checked.
     <script>
 
 
-
     
     var  img_0 =    "<img src=\"{% static "styles/cropped_0.png" %}\" alt=\"something\">"
     var  img_1 =    "<img src=\"{% static "styles/cropped_1.png" %}\" alt=\"something\">"
@@ -60,8 +59,13 @@ and the program will swap the two images that were checked.
 
         console.log(img_0);
  
-        var pics = [  img_7,img_2, img_3,img_4, img_5 ,img_8,img_0, img_1, img_6 ]
-        var copy = [img_0, img_1, img_2, img_3, img_4, img_5, img_6, img_7, img_8]
+
+        var pics =  [img_0, img_1, img_2, img_3, img_4, img_5, img_6, img_7, img_8]
+
+        shuffle_start();
+
+        
+        var copy = [img_0, img_1, img_2, img_5, img_6, img_7, img_8, img_3, img_4]
         
    
         console.log(pics)
@@ -93,7 +97,7 @@ function sawp(z){
                     var btn = document.createElement("DIV");
                     btn.setAttribute("id", "winner");
 
-                    document.getElementById("winner").innerHTML = "<h1>you solved the puzzle  with  "+number_of_sawps+" moves</h1>";
+                    document.getElementById("winner").innerHTML = "</br></br><h1>you solved the puzzle  with  "+number_of_sawps+" moves</h1>";
 
                     document.body.appendChild(btn);
                 break;
@@ -119,7 +123,24 @@ function sawp(z){
 
 }
 
+        function shuffle_start() {
+            var currentIndex = pics.length,
+                temporaryValue, randomIndex;
 
+            // While there remain elements to shuffle...
+            while (0 !== currentIndex) {
+
+                // Pick a remaining element...
+                randomIndex = Math.floor(Math.random() * currentIndex);
+                currentIndex -= 1;
+
+                // And swap it with the current element.
+                temporaryValue = pics[currentIndex];
+                pics[currentIndex] = pics[randomIndex];
+                pics[randomIndex] = temporaryValue;
+            }
+       
+        }
       
 
         function shuffle() {

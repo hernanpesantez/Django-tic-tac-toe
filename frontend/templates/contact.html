@@ -16,19 +16,19 @@
  
  <body>
    <div class="contact-form">
-     <h1>Contact us</h1>
+     <h1>Contact me</h1>
      <form method ="post" action="/contact_index/">
      <div class='txtb'>
-      <label>Full Name:</label>
-      <input type ="text" name="name" value="" placeholder="Enter Your Name">
+      <label>Name:</label>
+      <textarea name="name" class="form-control" placeholder="" row ="4" required></textarea><br>
     </div>
      <div class='txtb'>
        <label>Email:</label>
-       <input type ="email" name="email" value="" placeholder="Enter Your Email">
+      <textarea name="email" class="form-control" placeholder="" row ="4" required></textarea><br>
      </div>
     <div class='txtb'>
       <label>Message:</label>
-      <textarea name="message" class="form-control" placeholder="Message" row ="4" required></textarea><br>
+      <textarea name="message" class="form-control" placeholder="" row ="4" required></textarea><br>
     </div>
     <input class=" btn" type="submit" value="SEND">
     </form>

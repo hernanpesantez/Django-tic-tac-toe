@@ -30,10 +30,13 @@ body {
 }
 
 .team .team_member {
-    background: rgb(26, 43, 44);
+    box-shadow: 0 0 20px #000000;
+    box-sizing: border-box;
+    border-radius: 8px;
+    background: #162726;
     margin: 5px;
     margin-bottom: 50px;
-    width: 480px;
+    width: 750px;
     padding: 20px;
     line-height: 20px;
     color: rgb(231, 243, 243);
@@ -58,7 +61,7 @@ body {
     margin: 12px 0;
     font-size: 16px;
     text-align: center;
-    font-family: sans-serif;
+    font-family: Montserrat, sans-serif;
 }
 
 .team .team_member .team_img {
@@ -128,8 +131,11 @@ body {
 }
 
 .media {
+    display: flex;
     justify-content: center;
     text-emphasis: center;
-    float: right;
-    margin-right: 90px;
+    left: 50%;
+    top: 50%;
+    /* float: right; */
+    /* margin-right: 120px; */
 }

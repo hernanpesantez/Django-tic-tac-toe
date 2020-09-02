@@ -40,18 +40,20 @@ body {
     font-size: 14px;
 }
 
-.txtb input {
+
+/* .txtb input {
     color: black;
-}
+} */
 
 .txtb input,
 .txtb textarea {
     width: 100%;
-    border: none;
-    background: none;
+    height: 50px;
+    /* border: none; */
+    /* background: none; */
     font-size: 18px;
     margin-top: 6px;
-    color: white;
+    /* color: white; */
 }
 
 .btn {

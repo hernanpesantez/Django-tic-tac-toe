@@ -5,7 +5,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Covid-X</title>
+  <title>PLAY-HUB</title>
   <meta charset="utf-8">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -14,7 +14,7 @@
   <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-     <link rel="stylesheet" type="text/css" href="{% static '/styles/main.css' %}?{% now "U" %}">
+  <link rel="stylesheet" type="text/css" href="{% static '/styles/main.css' %}?{% now "U" %}">
 
 
 </head>
@@ -30,7 +30,7 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>                        
       </button>
-      <a class="navbar-brand" href={% url 'home' %}>COVID-X</a>
+      <a class="navbar-brand" href={% url 'home' %}>PLAY-HUB</a>
     </div>
 
     
@@ -49,9 +49,8 @@
       
           <a class="dropdown-item" href={% url 'tictactoe' %}>TICTACTOE</a></li>
            <li>
-          <a class="dropdown-item" href={% url 'puzzle' %}>HERNAN</a></li>
+          <a class="dropdown-item" href={% url 'puzzle' %}>PUZZLE</a></li>
            <li>
-          <a class="dropdown-item" href={% url 'puzzledoris'%}>DORIS</a></li>
         
         </div>
       </li>
@@ -82,9 +81,7 @@
 
 
 
-  <form form id ="search" method="get" action="https://www.google.com/search?q=google">
-    <input class="form-control mr-sm-2" id="pw   " type="input" placeholder="Search" aria-label="Search" onckey="location.href='http://stackoverflow.com';">
-  </form>
+
 
 
 
