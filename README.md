@@ -1,11 +1,8 @@
 [Play here](https://play-hub.herokuapp.com/)
 
+![alt text](https://github.com/hernanpesantez/Django-tic-tac-toe/blob/master/frontend/static/styles/tic-tac-toe-home.png "Home")
+![alt text](https://github.com/hernanpesantez/Django-tic-tac-toe/blob/master/frontend/static/styles/tic-tac-toe-game.png "Game")
 
-
-Here's our logo (hover to see the title text):
-
-Inline-style: 
-![alt text](https://github.com/hernanpesantez/Django-tic-tac-toe/blob/master/frontend/styles/cropped_8.png "Logo Title Text 1")
 
 ### Tech
 
@@ -56,5 +53,5 @@ locate manage.py, run the the following, inside the same directory
 ```
 ```sh
  $ python manage.py migrate
-   python manage.py migrate
+   
 ```
