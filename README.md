@@ -1,5 +1,12 @@
 [Play here](https://play-hub.herokuapp.com/)
 
+
+
+Here's our logo (hover to see the title text):
+
+Inline-style: 
+![alt text](https://github.com/hernanpesantez/Django-tic-tac-toe/blob/master/frontend/styles/cropped_8.png "Logo Title Text 1")
+
 ### Tech
 
 * [ADjango] - A high-level Python Web framework that encourages rapid development and clean, pragmatic design!
